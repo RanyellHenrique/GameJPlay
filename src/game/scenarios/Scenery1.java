@@ -19,7 +19,7 @@ public class Scenery1 {
 		cena = new Scene();
 		cena.loadFromFile("src/resouces/snc/scenery1.scn");
 		jogador = new Player(650, 300);
-		zumbi = new Zumbi(200, 450);
+		zumbi = new Zumbi(320, 450);
 		teclado = janela.getKeyboard();
 		run();
 	}

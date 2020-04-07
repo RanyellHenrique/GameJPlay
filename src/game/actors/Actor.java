@@ -40,7 +40,7 @@ public class Actor extends Sprite {
 				}
 				if(colisaoHorizontal(this, tile)) {
 					if(tile.x > this.x + this.width - 2) {
-						this.x = tile.x - tile.width;
+						this.x = tile.x - this.width;
 					}
 					else { 
 						this.x = tile.x + tile.width;
