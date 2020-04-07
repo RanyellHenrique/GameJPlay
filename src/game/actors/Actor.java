@@ -1,65 +1,26 @@
-package game.players;
+package game.actors;
 
 import java.awt.Point;
 import java.util.Vector;
 
 import game.controls.control;
 import jplay.GameObject;
-import jplay.Keyboard;
 import jplay.Scene;
 import jplay.Sprite;
 import jplay.TileInfo;
-import jplay.Window;
 
-public class Player extends Sprite{
+public class Actor extends Sprite {
 	
-	private double velocidade = 1;
-	private int direcao = 3;
-	private boolean movendo = false;
-	private control controle = new control();
-
-	public Player(int x, int y) {
-		super("src/resouces/sprites/jogador.png", 20);
-		this.x = x;
-		this.y = y;
+	protected double velocidade = 1;
+	protected int direcao = 3;
+	protected boolean movendo = false;
+	protected control controle = new control();
+	
+	public Actor(String fileName, int numFrames) {
+		super(fileName, numFrames);
 	}
-
-	public void mover(Window window, Keyboard teclado) {
-		
-		if(teclado.keyDown(Keyboard.LEFT_KEY)) {
-			if(this.x > 0) this.x -= velocidade;
-			if(direcao != 1) {
-				setSequence(4, 8);
-				direcao = 1;
-			}movendo = true;
-		}
-		else if(teclado.keyDown(Keyboard.RIGHT_KEY)) {
-			if(this.x < window.getWidth() - 60) this.x += velocidade;
-			if(direcao != 2) {
-				setSequence(8, 12);
-				direcao = 2;
-			}movendo = true;		
-		}
-		else if(teclado.keyDown(Keyboard.UP_KEY)) {
-			if(this.y > 0) this.y -= velocidade;
-			if(direcao != 4) {
-				setSequence(12, 16);
-				direcao = 4;
-			}movendo = true;		
-		}
-		else if(teclado.keyDown(Keyboard.DOWN_KEY)) {
-			if(this.y < window.getHeight() - 60) this.y += velocidade;
-			if(direcao != 5) {
-				setSequence(0, 4);
-				direcao = 5;
-			}movendo = true;		
-		}
-		if(movendo) {
-			update();
-			movendo = false;
-		}
-	}
-
+	
+	
 	public void caminho(Scene cena) {
 		Point min = new Point((int)this.x , (int)this.y);
 		Point max = new Point((int)this.x + this.width , (int)this.y + this.height);
