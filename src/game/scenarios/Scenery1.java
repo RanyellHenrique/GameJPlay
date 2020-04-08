@@ -1,5 +1,6 @@
 package game.scenarios;
 
+import game.Objects.ObjectInSnenary;
 import game.actors.Player;
 import game.actors.Zumbi;
 import jplay.Keyboard;
@@ -13,6 +14,8 @@ public class Scenery1 {
 	private Player jogador;
 	private Keyboard teclado;
 	private Zumbi zumbi;
+	private ObjectInSnenary arvore;
+	private ObjectInSnenary arvore2;
 	
 	public Scenery1(Window window) {
 		janela = window;
@@ -20,6 +23,8 @@ public class Scenery1 {
 		cena.loadFromFile("src/resouces/snc/scenery1.scn");
 		jogador = new Player(650, 300);
 		zumbi = new Zumbi(320, 450);
+		arvore = new ObjectInSnenary("src/resouces/sprites/arvore.png", 60, 400); 
+		arvore2 = new ObjectInSnenary("src/resouces/sprites/arvore.png", 450, 450); 
 		teclado = janela.getKeyboard();
 		run();
 	}
@@ -40,8 +45,18 @@ public class Scenery1 {
 			zumbi.x += cena.getXOffset();
 			zumbi.y += cena.getYOffset();
 			
+			arvore.x += cena.getXOffset();
+			arvore.y += cena.getYOffset();
+			
+			arvore2.x += cena.getXOffset();
+			arvore2.y += cena.getYOffset();
+			
+			
 			jogador.draw();
 			zumbi.draw();
+			arvore.draw();
+			arvore2.draw();
+			
 			janela.update();
 		}
 	}
