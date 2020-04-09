@@ -1,8 +1,9 @@
 package game.actors;
 
 public class Zumbi  extends Actor{
-
 	
+	private double ataque = 1;
+
 	public Zumbi(int x, int y) {
 		super("src/resouces/sprites/zumbi.png", 16);
 		this.x = x;
@@ -53,7 +54,14 @@ public class Zumbi  extends Actor{
 			this.movendo = false;
 			this.x = 10_000_000;
 		}
-		
 	}
-
+	
+	public void atacar(Player jogador) {
+		if(this.collided(jogador)) {
+			jogador.energia -= this.ataque ;
+		}
+		if(jogador.energia <= 0) {
+			System.exit(0);
+		}
+	}
 }

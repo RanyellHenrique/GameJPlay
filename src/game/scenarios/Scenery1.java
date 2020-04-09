@@ -1,12 +1,12 @@
 package game.scenarios;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import game.Objects.ObjectInScenery;
 import game.Objects.ObjectControl;
+import game.Objects.ObjectInScenery;
 import game.actors.Player;
 import game.actors.Zumbi;
+import game.actors.ZumbiControl;
 import game.audios.Audio;
 import jplay.Keyboard;
 import jplay.Scene;
@@ -18,22 +18,17 @@ public class Scenery1 {
 	private Scene cena;
 	private Player jogador;
 	private Keyboard teclado;
-	private Zumbi zumbi;
-	private List<ObjectInScenery> arvores = new ArrayList<>();
+	private List<ObjectInScenery> arvores;
+	private List<Zumbi> zumbis;
 	
 	public Scenery1(Window window) {
 		janela = window;
 		cena = new Scene();
 		cena.loadFromFile("src/resouces/snc/scenery1.scn");
 		jogador = new Player(650, 300);
-		zumbi = new Zumbi(320, 450);
-		//Audio.play("src/audios/musica.wav");
-		for(int i=0; i<5; i++) {
-			if(i%2 == 0)
-				arvores.add(new ObjectInScenery("src/resouces/sprites/arvore.png", 150 * (1 * i), 400 + 20 * i));
-			else
-				arvores.add(new ObjectInScenery("src/resouces/sprites/arvore.png", 200 * (1 * i), 350 + 10 * i));
-		}
+		Audio.play("src/audios/musica.wav");
+		arvores = ObjectControl.objectInScenery();
+		zumbis = ZumbiControl.zumbis();
 		teclado = janela.getKeyboard();
 		
 		run();
@@ -44,20 +39,14 @@ public class Scenery1 {
 			//cena.draw();
 			jogador.mover(janela, teclado);
 			jogador.caminho(cena);
-			zumbi.perseguir(jogador.x, jogador.y);
-			zumbi.caminho(cena);
-			jogador.atirar(janela, cena, teclado, zumbi);
-			zumbi.morrer();
-			
 			cena.moveScene(jogador);
+			
+			ObjectControl.renderizacaoDeObjetos(arvores, jogador, zumbis, cena);
+			ZumbiControl.renderizacaoDeZumbis(zumbis, jogador, cena, arvores, teclado, janela);
 			
 			jogador.x += cena.getXOffset();
 			jogador.y += cena.getYOffset();
-			
-			zumbi.x += cena.getXOffset();
-			zumbi.y += cena.getYOffset();
-			
-			ObjectControl.renderizacaoDeObjetos(arvores, jogador, zumbi, cena);
+			jogador.mostrarEnergia(janela);
 			
 			janela.update();
 		}

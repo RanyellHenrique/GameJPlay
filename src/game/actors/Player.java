@@ -1,5 +1,7 @@
 package game.actors;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.KeyEvent;
 
 import game.actions.TiroControl;
@@ -10,7 +12,7 @@ import jplay.Window;
 public class Player extends Actor{
 	
 	TiroControl tiros = new TiroControl();
-	
+	Font f = new Font("arial", Font.BOLD, 30);
 
 	public Player(int x, int y) {
 		super("src/resouces/sprites/jogador.png", 20);
@@ -59,5 +61,9 @@ public class Player extends Actor{
 			tiros.adiciononaTiro(x, y + 11, direcao, cena);
 		}
 		tiros.run(inimigo);
+	}
+	
+	public void mostrarEnergia(Window janela) {
+		janela.drawText("HP: " + energia , 30, 30, Color.BLACK, f);
 	}
 }
