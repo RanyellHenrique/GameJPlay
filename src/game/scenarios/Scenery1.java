@@ -1,8 +1,13 @@
 package game.scenarios;
 
-import game.Objects.ObjectInSnenary;
+import java.util.ArrayList;
+import java.util.List;
+
+import game.Objects.ObjectInScenery;
+import game.Objects.ObjectControl;
 import game.actors.Player;
 import game.actors.Zumbi;
+import game.audios.Audio;
 import jplay.Keyboard;
 import jplay.Scene;
 import jplay.Window;
@@ -14,8 +19,7 @@ public class Scenery1 {
 	private Player jogador;
 	private Keyboard teclado;
 	private Zumbi zumbi;
-	private ObjectInSnenary arvore;
-	private ObjectInSnenary arvore2;
+	private List<ObjectInScenery> arvores = new ArrayList<>();
 	
 	public Scenery1(Window window) {
 		janela = window;
@@ -23,9 +27,15 @@ public class Scenery1 {
 		cena.loadFromFile("src/resouces/snc/scenery1.scn");
 		jogador = new Player(650, 300);
 		zumbi = new Zumbi(320, 450);
-		arvore = new ObjectInSnenary("src/resouces/sprites/arvore.png", 60, 400); 
-		arvore2 = new ObjectInSnenary("src/resouces/sprites/arvore.png", 450, 450); 
+		//Audio.play("src/audios/musica.wav");
+		for(int i=0; i<5; i++) {
+			if(i%2 == 0)
+				arvores.add(new ObjectInScenery("src/resouces/sprites/arvore.png", 150 * (1 * i), 400 + 20 * i));
+			else
+				arvores.add(new ObjectInScenery("src/resouces/sprites/arvore.png", 200 * (1 * i), 350 + 10 * i));
+		}
 		teclado = janela.getKeyboard();
+		
 		run();
 	}
 	
@@ -36,6 +46,8 @@ public class Scenery1 {
 			jogador.caminho(cena);
 			zumbi.perseguir(jogador.x, jogador.y);
 			zumbi.caminho(cena);
+			jogador.atirar(janela, cena, teclado, zumbi);
+			zumbi.morrer();
 			
 			cena.moveScene(jogador);
 			
@@ -45,17 +57,7 @@ public class Scenery1 {
 			zumbi.x += cena.getXOffset();
 			zumbi.y += cena.getYOffset();
 			
-			arvore.x += cena.getXOffset();
-			arvore.y += cena.getYOffset();
-			
-			arvore2.x += cena.getXOffset();
-			arvore2.y += cena.getYOffset();
-			
-			
-			jogador.draw();
-			zumbi.draw();
-			arvore.draw();
-			arvore2.draw();
+			ObjectControl.renderizacaoDeObjetos(arvores, jogador, zumbi, cena);
 			
 			janela.update();
 		}

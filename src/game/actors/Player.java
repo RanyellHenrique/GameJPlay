@@ -1,9 +1,15 @@
 package game.actors;
 
+import java.awt.event.KeyEvent;
+
+import game.actions.TiroControl;
 import jplay.Keyboard;
+import jplay.Scene;
 import jplay.Window;
 
 public class Player extends Actor{
+	
+	TiroControl tiros = new TiroControl();
 	
 
 	public Player(int x, int y) {
@@ -46,5 +52,12 @@ public class Player extends Actor{
 			update();
 			movendo = false;
 		}
+	}
+	
+	public void atirar(Window janela, Scene cena, Keyboard teclado, Actor inimigo) {
+		if(teclado.keyDown(KeyEvent.VK_A)) {
+			tiros.adiciononaTiro(x, y + 11, direcao, cena);
+		}
+		tiros.run(inimigo);
 	}
 }

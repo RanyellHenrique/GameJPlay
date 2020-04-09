@@ -3,7 +3,6 @@ package game.actors;
 import java.awt.Point;
 import java.util.Vector;
 
-import game.controls.control;
 import jplay.GameObject;
 import jplay.Scene;
 import jplay.Sprite;
@@ -14,7 +13,8 @@ public class Actor extends Sprite {
 	protected double velocidade = 1;
 	protected int direcao = 3;
 	protected boolean movendo = false;
-	protected control controle = new control();
+	protected ActorControl controle = new ActorControl();
+	public double energia = 1000;
 	
 	public Actor(String fileName, int numFrames) {
 		super(fileName, numFrames);

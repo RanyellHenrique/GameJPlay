@@ -46,4 +46,14 @@ public class Zumbi  extends Actor{
 		}
 	}
 
+	public void morrer() {
+		if(this.energia <= 0) {
+			this.velocidade = 0;
+			this.direcao = 0;
+			this.movendo = false;
+			this.x = 10_000_000;
+		}
+		
+	}
+
 }
