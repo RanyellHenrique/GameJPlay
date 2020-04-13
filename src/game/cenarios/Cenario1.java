@@ -112,7 +112,7 @@ public class Cenario1 {
 		for (int i = 0; i < reciclaveis.size(); i++) {
 			reciclavel = reciclaveis.get(i);
 			reciclavel.showObject(cena);
-			jogador.coletarReciclavel(reciclavel);
+			jogador.coletarReciclavel(reciclavel, teclado);
 		}
 	}
 

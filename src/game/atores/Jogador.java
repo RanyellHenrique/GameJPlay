@@ -79,8 +79,8 @@ public class Jogador extends Ator{
 		janela.drawText("HP: " + energia , 30, 30, Color.BLACK, f);
 	}
 	
-	public void coletarReciclavel(ObjetoReciclavel reciclavel) {
-		if(this.collided(reciclavel)) {
+	public void coletarReciclavel(ObjetoReciclavel reciclavel, Keyboard teclado) {
+		if(this.collided(reciclavel) && teclado.keyDown(KeyEvent.VK_SPACE)) {
 			this.reciclaveis.add(reciclavel);
 			reciclavel.x = 100_000_000;
 		}
