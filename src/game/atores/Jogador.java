@@ -10,6 +10,7 @@ import game.Objetos.ObjetoReciclavel;
 import game.actions.ControleTiro;
 import jplay.Keyboard;
 import jplay.Scene;
+import jplay.Sound;
 import jplay.Window;
 
 public class Jogador extends Ator{
@@ -82,7 +83,12 @@ public class Jogador extends Ator{
 	public void coletarReciclavel(ObjetoReciclavel reciclavel, Keyboard teclado) {
 		if(this.collided(reciclavel) && teclado.keyDown(KeyEvent.VK_SPACE)) {
 			this.reciclaveis.add(reciclavel);
+			somColeta();
 			reciclavel.x = 100_000_000;
 		}
+	}
+	
+	private void somColeta() {
+		new Sound("src/audios/coleta.wav").play();
 	}
 }

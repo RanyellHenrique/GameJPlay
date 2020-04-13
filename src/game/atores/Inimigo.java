@@ -5,6 +5,7 @@ import java.util.List;
 import game.Objetos.ObjetoReciclavel;
 import game.Objetos.TipoReciclavel;
 import jplay.Scene;
+import jplay.Sound;
 
 public class Inimigo  extends Ator{
 	
@@ -93,8 +94,14 @@ public class Inimigo  extends Ator{
 	}
 	
 	public void lixoDropado(Scene cena, List<ObjetoReciclavel> objetosReciclaveis) {
-		if(!morrer)
+		if(!morrer) {
 			objetosReciclaveis.add(new ObjetoReciclavel("", (int)this.x, (int)this.y, TipoReciclavel.random()));
+			somLixoDropado();
+		}
+	}
+	
+	private void somLixoDropado() {
+		new Sound("src/audios/poof.wav").play();
 	}
 	
 	
