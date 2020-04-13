@@ -1,4 +1,4 @@
-package game.Objects;
+package game.Objetos;
 
 public enum TipoReciclavel {
 	PAPEL("Papel", "src/resouces/sprites/papel.png"),

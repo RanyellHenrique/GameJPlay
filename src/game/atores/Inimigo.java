@@ -1,16 +1,17 @@
 package game.atores;
 
-import game.Objects.ObjetoReciclavel;
-import game.Objects.TipoReciclavel;
+import java.util.List;
+
+import game.Objetos.ObjetoReciclavel;
+import game.Objetos.TipoReciclavel;
 import jplay.Scene;
 
-public class Zumbi  extends Ator{
+public class Inimigo  extends Ator{
 	
 	private double ataque = 1;
-	private ObjetoReciclavel objetoReciclavel;
 	private boolean morrer = false;
 
-	public Zumbi(int x, int y) {
+	public Inimigo(int x, int y) {
 		super("src/resouces/sprites/zumbi.png", 16);
 		this.x = x;
 		this.y = y;
@@ -18,6 +19,22 @@ public class Zumbi  extends Ator{
 		this.velocidade = 0.3;
 	}
 	
+	public double getAtaque() {
+		return ataque;
+	}
+
+	public void setAtaque(double ataque) {
+		this.ataque = ataque;
+	}
+
+	public boolean getMorrer() {
+		return morrer;
+	}
+
+	public void setMorrer(boolean morrer) {
+		this.morrer = morrer;
+	}
+
 	public void perseguir(double x, double y) {
 		if(this.x > x && this.y <= y + 50 && this.y >= y - 50) {
 			moveTo(x, y, velocidade);
@@ -53,14 +70,15 @@ public class Zumbi  extends Ator{
 		}
 	}
 
-	public void morrer(Scene cena) {
+	public void morrer(Scene cena, List<ObjetoReciclavel> objetosReciclaveis) {
 		if(this.energia <= 0) {
 			this.velocidade = 0;
+			this.ataque = 0;
 			this.direcao = 0;
 			this.movendo = false;
-			lixoDropado(cena);
+			lixoDropado(cena, objetosReciclaveis);
 			morrer = true;
-			this.x = 10_000_000;
+			this.x = 100_000_000;
 		}
 	}
 	
@@ -74,12 +92,10 @@ public class Zumbi  extends Ator{
 		}
 	}
 	
-	public void lixoDropado(Scene cena) {
+	public void lixoDropado(Scene cena, List<ObjetoReciclavel> objetosReciclaveis) {
 		if(!morrer)
-			this.objetoReciclavel = new ObjetoReciclavel("", (int)this.x, (int)this.y, TipoReciclavel.random());
-		
-		this.objetoReciclavel.draw();
-		this.objetoReciclavel.showObject(cena);
+			objetosReciclaveis.add(new ObjetoReciclavel("", (int)this.x, (int)this.y, TipoReciclavel.random()));
 	}
+	
 	
 }

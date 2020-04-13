@@ -1,4 +1,4 @@
-package game.Objects;
+package game.Objetos;
 
 import jplay.Scene;
 import jplay.Sprite;

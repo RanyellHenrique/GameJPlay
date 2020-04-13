@@ -1,4 +1,4 @@
-package game.Objects;
+package game.Objetos;
 
 public class ObjetoReciclavel extends Objeto {
 	
@@ -16,5 +16,4 @@ public class ObjetoReciclavel extends Objeto {
 	public void setTipo(TipoReciclavel tipo) {
 		this.tipo = tipo;
 	}
-
 }
