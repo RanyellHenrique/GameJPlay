@@ -1,4 +1,4 @@
-package game.actors;
+package game.atores;
 
 import java.awt.Point;
 import java.util.Vector;
@@ -8,15 +8,15 @@ import jplay.Scene;
 import jplay.Sprite;
 import jplay.TileInfo;
 
-public class Actor extends Sprite {
+public class Ator extends Sprite {
 	
 	protected double velocidade = 1;
 	protected int direcao = 3;
 	protected boolean movendo = false;
-	protected ActorControl controle = new ActorControl();
+	protected ControleJogador controle = new ControleJogador();
 	public double energia = 1000;
 	
-	public Actor(String fileName, int numFrames) {
+	public Ator(String fileName, int numFrames) {
 		super(fileName, numFrames);
 	}
 	

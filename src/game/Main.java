@@ -1,6 +1,6 @@
 package game;
 
-import game.scenarios.Scenery1;
+import game.cenarios.Cenario1;
 import jplay.GameImage;
 import jplay.Keyboard;
 import jplay.Window;
@@ -18,7 +18,7 @@ public class Main {
 			janela.update();
 			
 			if(teclado.keyDown(Keyboard.ENTER_KEY)) {
-				new Scenery1(janela);
+				new Cenario1(janela);
 			}
 		}
 	}

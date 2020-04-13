@@ -1,10 +1,10 @@
-package game.actors;
+package game.atores;
 
-import game.Objects.ObjectInScenery;
+import game.Objects.Objeto;
 import jplay.GameObject;
 import jplay.TileInfo;
 
-public class ActorControl {
+public class ControleJogador {
 	
 	public boolean colisao(GameObject obj, TileInfo tile) {
 		if((tile.id >= 20) && obj.collided(tile)) {
@@ -14,7 +14,7 @@ public class ActorControl {
 	}
 	
 	public boolean colisaoObjeto(GameObject obj, GameObject obj2) {
-		if(obj.collided(obj2) && (obj2 instanceof ObjectInScenery || obj instanceof ObjectInScenery)) {
+		if(obj.collided(obj2) && (obj2 instanceof Objeto || obj instanceof Objeto)) {
 			return true;
 		}
 		return false;

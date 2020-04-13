@@ -1,8 +1,14 @@
-package game.actors;
+package game.atores;
 
-public class Zumbi  extends Actor{
+import game.Objects.ObjetoReciclavel;
+import game.Objects.TipoReciclavel;
+import jplay.Scene;
+
+public class Zumbi  extends Ator{
 	
 	private double ataque = 1;
+	private ObjetoReciclavel objetoReciclavel;
+	private boolean morrer = false;
 
 	public Zumbi(int x, int y) {
 		super("src/resouces/sprites/zumbi.png", 16);
@@ -47,16 +53,19 @@ public class Zumbi  extends Actor{
 		}
 	}
 
-	public void morrer() {
+	public void morrer(Scene cena) {
 		if(this.energia <= 0) {
 			this.velocidade = 0;
 			this.direcao = 0;
 			this.movendo = false;
+			lixoDropado(cena);
+			morrer = true;
 			this.x = 10_000_000;
 		}
 	}
 	
-	public void atacar(Player jogador) {
+	
+	public void atacar(Jogador jogador) {
 		if(this.collided(jogador)) {
 			jogador.energia -= this.ataque ;
 		}
@@ -64,4 +73,13 @@ public class Zumbi  extends Actor{
 			System.exit(0);
 		}
 	}
+	
+	public void lixoDropado(Scene cena) {
+		if(!morrer)
+			this.objetoReciclavel = new ObjetoReciclavel("", (int)this.x, (int)this.y, TipoReciclavel.random());
+		
+		this.objetoReciclavel.draw();
+		this.objetoReciclavel.showObject(cena);
+	}
+	
 }

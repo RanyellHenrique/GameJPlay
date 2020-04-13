@@ -1,20 +1,20 @@
-package game.actors;
+package game.atores;
 
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.KeyEvent;
 
-import game.actions.TiroControl;
+import game.actions.ControleTiro;
 import jplay.Keyboard;
 import jplay.Scene;
 import jplay.Window;
 
-public class Player extends Actor{
+public class Jogador extends Ator{
 	
-	TiroControl tiros = new TiroControl();
+	ControleTiro tiros = new ControleTiro();
 	Font f = new Font("arial", Font.BOLD, 30);
 
-	public Player(int x, int y) {
+	public Jogador(int x, int y) {
 		super("src/resouces/sprites/jogador.png", 20);
 		this.x = x;
 		this.y = y;
@@ -56,7 +56,7 @@ public class Player extends Actor{
 		}
 	}
 	
-	public void atirar(Window janela, Scene cena, Keyboard teclado, Actor inimigo) {
+	public void atirar(Window janela, Scene cena, Keyboard teclado, Ator inimigo) {
 		if(teclado.keyDown(KeyEvent.VK_A)) {
 			tiros.adiciononaTiro(x, y + 11, direcao, cena);
 		}
