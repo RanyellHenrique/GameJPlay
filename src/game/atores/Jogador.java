@@ -82,7 +82,7 @@ public class Jogador extends Ator{
 	}
 	
 	public void coletarReciclavel(Reciclavel reciclavel, Keyboard teclado) {
-		if(this.collided(reciclavel) && teclado.keyDown(KeyEvent.VK_SPACE)) {
+		if(this.collided(reciclavel) && teclado.keyDown(Keyboard.SPACE_KEY)) {
 			this.mochila.add(reciclavel);
 			somColeta();
 			reciclavel.x = 100_000_000;
@@ -96,7 +96,7 @@ public class Jogador extends Ator{
 	public void depositarReciclavel(Lixeira lixeira, Keyboard teclado) {
 		if(this.collided(lixeira)) {
 			for (int i = 0; i < mochila.size(); i++) {
-				if(lixeira.tipoReciclavel(mochila.get(i)) && teclado.keyDown(KeyEvent.VK_SPACE)) {
+				if(lixeira.tipoReciclavel(mochila.get(i)) && teclado.keyDown(Keyboard.SPACE_KEY)) {
 					lixeira.addReciclavel(mochila.get(i));
 					mochila.remove(i);
 					somDeposito();

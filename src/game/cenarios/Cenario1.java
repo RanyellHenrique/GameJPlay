@@ -167,5 +167,5 @@ public class Cenario1 {
 			new GameOver(janela);
 		}
 	}
-	
+
 }

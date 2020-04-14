@@ -27,7 +27,7 @@ public class GameOver {
 		
 			if(teclado.keyDown(Keyboard.ENTER_KEY)) {
 				Audio.stop();
-				new Cenario1(janela);
+				new TelaInicial(janela);
 			}	
 		}
 	}
