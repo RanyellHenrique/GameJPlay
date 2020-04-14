@@ -2,9 +2,9 @@ package game.Objetos;
 
 public enum TipoReciclavel {
 	PAPEL("Papel", "src/resouces/sprites/papel.png"),
-	VIDRO("Vidro","src/resouces/sprites/vidro.png"),
-	METAL("Metal","src/resouces/sprites/vidro.png"),
-	PLÁSTICO("Plástico","src/resouces/sprites/papel.png"),
+	VIDRO("Vidro", "src/resouces/sprites/vidro.png"),
+	METAL("Metal", "src/resouces/sprites/metal.png"),
+	PLÁSTICO("Plástico", "src/resouces/sprites/plastico.png"),
 	ORGÂNICO("Orgânico", "src/resouces/sprites/organico.png");
 	
 	private String descricao;

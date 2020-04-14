@@ -6,7 +6,10 @@ import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
 
-import game.Objetos.ObjetoReciclavel;
+import game.Objetos.Lixeira;
+import game.Objetos.Objeto;
+import game.Objetos.Reciclavel;
+import game.Objetos.TipoReciclavel;
 import game.actions.ControleTiro;
 import jplay.Keyboard;
 import jplay.Scene;
@@ -17,7 +20,9 @@ public class Jogador extends Ator{
 	
 	ControleTiro tiros = new ControleTiro();
 	Font f = new Font("arial", Font.BOLD, 30);
-	private List<ObjetoReciclavel> reciclaveis = new ArrayList<>(); 
+	Font f2 = new Font("arial", Font.BOLD, 10);
+	private List<Reciclavel> reciclaveis = new ArrayList<>();
+	private Objeto lixeira = new Objeto("src/resouces/sprites/mochila.png", 220, 0);
 
 	public Jogador(int x, int y) {
 		super("src/resouces/sprites/jogador.png", 20);
@@ -25,11 +30,11 @@ public class Jogador extends Ator{
 		this.y = y;
 	}
 
-	public List<ObjetoReciclavel> getReciclaveis() {
+	public List<Reciclavel> getReciclaveis() {
 		return reciclaveis;
 	}
 
-	public void setReciclaveis(List<ObjetoReciclavel> reciclaveis) {
+	public void setReciclaveis(List<Reciclavel> reciclaveis) {
 		this.reciclaveis = reciclaveis;
 	}
 
@@ -76,11 +81,7 @@ public class Jogador extends Ator{
 		tiros.run(inimigo);
 	}
 	
-	public void mostrarEnergia(Window janela) {
-		janela.drawText("HP: " + energia , 30, 30, Color.BLACK, f);
-	}
-	
-	public void coletarReciclavel(ObjetoReciclavel reciclavel, Keyboard teclado) {
+	public void coletarReciclavel(Reciclavel reciclavel, Keyboard teclado) {
 		if(this.collided(reciclavel) && teclado.keyDown(KeyEvent.VK_SPACE)) {
 			this.reciclaveis.add(reciclavel);
 			somColeta();
@@ -91,4 +92,38 @@ public class Jogador extends Ator{
 	private void somColeta() {
 		new Sound("src/audios/coleta.wav").play();
 	}
+	
+	public void depositarReciclavel(Lixeira lixeira, Keyboard teclado) {
+		if(this.collided(lixeira) && teclado.keyDown(KeyEvent.VK_SPACE)) {
+			for (int i = 0; i < reciclaveis.size(); i++) {
+				if(lixeira.addReciclavel(reciclaveis.get(i))) {
+					reciclaveis.remove(i);
+					somDeposito();
+				}
+			}
+		}
+	}
+	
+	private void somDeposito() {
+		new Sound("src/audios/deposito.wav").play();
+	}
+	
+	public void mostrarEnergia(Window janela) {
+		janela.drawText("HP: " + energia , 30, 30, Color.BLACK, f);
+	}
+	
+	public void mostrarMochila(Window janela) {
+		lixeira.draw();
+		janela.drawText("X" + Reciclavel.quantidadeTipoReciclavel(reciclaveis, TipoReciclavel.VIDRO),
+				220, 40, Color.BLACK, f2);
+		janela.drawText("X" + Reciclavel.quantidadeTipoReciclavel(reciclaveis, TipoReciclavel.PAPEL),
+				255, 40, Color.BLACK, f2);
+		janela.drawText("X" + Reciclavel.quantidadeTipoReciclavel(reciclaveis, TipoReciclavel.ORGÂNICO),
+				285, 40, Color.BLACK, f2);
+		janela.drawText("X" + Reciclavel.quantidadeTipoReciclavel(reciclaveis, TipoReciclavel.PLÁSTICO),
+				320, 40, Color.BLACK, f2);
+		janela.drawText("X" + Reciclavel.quantidadeTipoReciclavel(reciclaveis, TipoReciclavel.METAL),
+				350, 40, Color.BLACK, f2);
+	}
+	
 }

@@ -2,7 +2,7 @@ package game.atores;
 
 import java.util.List;
 
-import game.Objetos.ObjetoReciclavel;
+import game.Objetos.Reciclavel;
 import game.Objetos.TipoReciclavel;
 import jplay.Scene;
 import jplay.Sound;
@@ -71,7 +71,7 @@ public class Inimigo  extends Ator{
 		}
 	}
 
-	public void morrer(Scene cena, List<ObjetoReciclavel> objetosReciclaveis) {
+	public void morrer(Scene cena, List<Reciclavel> objetosReciclaveis) {
 		if(this.energia <= 0) {
 			this.velocidade = 0;
 			this.ataque = 0;
@@ -93,9 +93,9 @@ public class Inimigo  extends Ator{
 		}
 	}
 	
-	public void lixoDropado(Scene cena, List<ObjetoReciclavel> objetosReciclaveis) {
+	public void lixoDropado(Scene cena, List<Reciclavel> objetosReciclaveis) {
 		if(!morrer) {
-			objetosReciclaveis.add(new ObjetoReciclavel("", (int)this.x, (int)this.y, TipoReciclavel.random()));
+			objetosReciclaveis.add(new Reciclavel("", (int)this.x, (int)this.y, TipoReciclavel.random()));
 			somLixoDropado();
 		}
 	}
