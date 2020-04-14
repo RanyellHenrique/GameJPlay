@@ -21,7 +21,7 @@ public class Jogador extends Ator{
 	ControleTiro tiros = new ControleTiro();
 	Font f = new Font("arial", Font.BOLD, 30);
 	Font f2 = new Font("arial", Font.BOLD, 10);
-	private List<Reciclavel> reciclaveis = new ArrayList<>();
+	private List<Reciclavel> mochila = new ArrayList<>();
 	private Objeto lixeira = new Objeto("src/resouces/sprites/mochila.png", 220, 0);
 
 	public Jogador(int x, int y) {
@@ -31,11 +31,11 @@ public class Jogador extends Ator{
 	}
 
 	public List<Reciclavel> getReciclaveis() {
-		return reciclaveis;
+		return mochila;
 	}
 
 	public void setReciclaveis(List<Reciclavel> reciclaveis) {
-		this.reciclaveis = reciclaveis;
+		this.mochila = reciclaveis;
 	}
 
 	public void mover(Window window, Keyboard teclado) {
@@ -83,7 +83,7 @@ public class Jogador extends Ator{
 	
 	public void coletarReciclavel(Reciclavel reciclavel, Keyboard teclado) {
 		if(this.collided(reciclavel) && teclado.keyDown(KeyEvent.VK_SPACE)) {
-			this.reciclaveis.add(reciclavel);
+			this.mochila.add(reciclavel);
 			somColeta();
 			reciclavel.x = 100_000_000;
 		}
@@ -94,10 +94,11 @@ public class Jogador extends Ator{
 	}
 	
 	public void depositarReciclavel(Lixeira lixeira, Keyboard teclado) {
-		if(this.collided(lixeira) && teclado.keyDown(KeyEvent.VK_SPACE)) {
-			for (int i = 0; i < reciclaveis.size(); i++) {
-				if(lixeira.addReciclavel(reciclaveis.get(i))) {
-					reciclaveis.remove(i);
+		if(this.collided(lixeira)) {
+			for (int i = 0; i < mochila.size(); i++) {
+				if(lixeira.tipoReciclavel(mochila.get(i)) && teclado.keyDown(KeyEvent.VK_SPACE)) {
+					lixeira.addReciclavel(mochila.get(i));
+					mochila.remove(i);
 					somDeposito();
 				}
 			}
@@ -114,15 +115,15 @@ public class Jogador extends Ator{
 	
 	public void mostrarMochila(Window janela) {
 		lixeira.draw();
-		janela.drawText("X" + Reciclavel.quantidadeTipoReciclavel(reciclaveis, TipoReciclavel.VIDRO),
+		janela.drawText("X" + Reciclavel.quantidadeTipoReciclavel(mochila, TipoReciclavel.VIDRO),
 				220, 40, Color.BLACK, f2);
-		janela.drawText("X" + Reciclavel.quantidadeTipoReciclavel(reciclaveis, TipoReciclavel.PAPEL),
+		janela.drawText("X" + Reciclavel.quantidadeTipoReciclavel(mochila, TipoReciclavel.PAPEL),
 				255, 40, Color.BLACK, f2);
-		janela.drawText("X" + Reciclavel.quantidadeTipoReciclavel(reciclaveis, TipoReciclavel.ORGÂNICO),
+		janela.drawText("X" + Reciclavel.quantidadeTipoReciclavel(mochila, TipoReciclavel.ORGÂNICO),
 				285, 40, Color.BLACK, f2);
-		janela.drawText("X" + Reciclavel.quantidadeTipoReciclavel(reciclaveis, TipoReciclavel.PLÁSTICO),
+		janela.drawText("X" + Reciclavel.quantidadeTipoReciclavel(mochila, TipoReciclavel.PLÁSTICO),
 				320, 40, Color.BLACK, f2);
-		janela.drawText("X" + Reciclavel.quantidadeTipoReciclavel(reciclaveis, TipoReciclavel.METAL),
+		janela.drawText("X" + Reciclavel.quantidadeTipoReciclavel(mochila, TipoReciclavel.METAL),
 				350, 40, Color.BLACK, f2);
 	}
 	

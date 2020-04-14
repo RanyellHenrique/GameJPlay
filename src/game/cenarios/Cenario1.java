@@ -23,14 +23,13 @@ public class Cenario1 {
 	private List<Objeto> arvores;
 	private List<Inimigo> inimigos;
 	private List<Reciclavel> reciclaveis = new ArrayList<>();
-	private Lixeira lixeira;
+	private List<Lixeira> lixeiras = new ArrayList<>();
 	
 	public Cenario1(Window window) {
 		janela = window;
 		cena = new Scene();
 		cena.loadFromFile("src/resouces/snc/scenery1.scn");
 		jogador = new Jogador(650, 300);
-		//Audio.play("src/audios/musica.wav");
 		arvores = gerandoArvores();
 		inimigos = gerandoInimigos();
 		gerandoLixeiras();
@@ -45,21 +44,21 @@ public class Cenario1 {
 			jogador.caminho(cena);
 			cena.moveScene(jogador);
 			
-			lixeira.draw();
+			
+			showLixeiras();
 			showReciclaveis();
 			showArvores();
 			showinimigos();
-			
-			lixeira.x += cena.getXOffset();
-			lixeira.y += cena.getYOffset();
+			inimigoFinal();
 			
 			jogador.x += cena.getXOffset();
 			jogador.y += cena.getYOffset();
-			jogador.depositarReciclavel(lixeira, teclado);
-
+	
 			jogador.mostrarEnergia(janela);
 			jogador.mostrarMochila(janela);
 			
+			vitoria();
+			gameOver();
 			janela.update();
 		}
 	}
@@ -96,11 +95,11 @@ public class Cenario1 {
 	
 	public List<Inimigo> gerandoInimigos(){
 		Random gerador = new Random();
-		List<Inimigo> zumbs = new ArrayList<>();
+		List<Inimigo> inimigos = new ArrayList<>();
 		for (int i = 0; i < 10; i++) {
-			zumbs.add(new Inimigo(gerador.nextInt(1580), 100 + gerador.nextInt(590)));
+			inimigos.add(new Inimigo(gerador.nextInt(1580), 100 + gerador.nextInt(590)));
 		}
-		return zumbs;
+		return inimigos;
 	}
 	
 	public  void showinimigos() {
@@ -128,7 +127,46 @@ public class Cenario1 {
 	}
 	
 	public void gerandoLixeiras(){
-		lixeira = new Lixeira("src/resouces/sprites/lixeira.png", 300, 200, TipoReciclavel.METAL);
+		lixeiras.add(new Lixeira("src/resouces/sprites/lixeira.png", 1620, 05, TipoReciclavel.METAL));
+		lixeiras.add(new Lixeira("src/resouces/sprites/lixeira.png", 1560, 05, TipoReciclavel.VIDRO));
+		lixeiras.add(new Lixeira("src/resouces/sprites/lixeira.png", 1480, 05, TipoReciclavel.ORGÂNICO));
+		lixeiras.add(new Lixeira("src/resouces/sprites/lixeira.png", 1400, 05, TipoReciclavel.PAPEL));
+		lixeiras.add(new Lixeira("src/resouces/sprites/lixeira.png", 1320, 05, TipoReciclavel.PLÁSTICO));
+	}
+	
+	public  void showLixeiras() {
+		for(Lixeira lixeira : lixeiras) {
+			lixeira.showObject(cena);
+			jogador.depositarReciclavel(lixeira, teclado);
+		}
+	}
+	
+	public void inimigoFinal() {
+		boolean novoInimigo = true;
+		for(Inimigo inimigo : inimigos) {
+			if(!inimigo.getMorrer()) {
+				novoInimigo = false;
+			}
+		}
+		if(novoInimigo && inimigos.size() == 10) {
+			inimigos.add(new Inimigo(300, 300, 5000));
+		}
+	}
+	
+	public void vitoria() {
+		Integer reciclaveis = 0;
+		for(Lixeira lixeira : lixeiras) {
+			reciclaveis += lixeira.getReciclaveis().size();
+		}
+		if(reciclaveis == 11) {
+			new Cenario2(janela);
+		}
+	}
+	
+	public void gameOver() {
+		if(jogador.energia <= 0) {
+			new GameOver(janela);
+		}
 	}
 	
 }

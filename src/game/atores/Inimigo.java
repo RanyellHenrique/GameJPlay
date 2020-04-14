@@ -20,6 +20,15 @@ public class Inimigo  extends Ator{
 		this.velocidade = 0.3;
 	}
 	
+	public Inimigo(int x, int y, double energia ) {
+		super("src/resouces/sprites/zumbi.png", 16);
+		this.x = x;
+		this.y = y;
+		this.setTotalDuration(2000);
+		this.velocidade = 0.5;
+		this.energia = 5000;
+	}
+	
 	public double getAtaque() {
 		return ataque;
 	}
@@ -85,12 +94,8 @@ public class Inimigo  extends Ator{
 	
 	
 	public void atacar(Jogador jogador) {
-		if(this.collided(jogador)) {
+		if(this.collided(jogador))
 			jogador.energia -= this.ataque ;
-		}
-		if(jogador.energia <= 0) {
-			System.exit(0);
-		}
 	}
 	
 	public void lixoDropado(Scene cena, List<Reciclavel> objetosReciclaveis) {

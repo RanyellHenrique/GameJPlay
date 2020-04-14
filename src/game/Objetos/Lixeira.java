@@ -29,12 +29,15 @@ public class Lixeira  extends Objeto{
 		this.reciclaveis = reciclaveis;
 	}
 	
-	public boolean addReciclavel(Reciclavel reciclavel) {
-		if(reciclavel.getTipo().getDescricao().equals(tipo.getDescricao())) {
-			this.reciclaveis.add(reciclavel);
+	public boolean tipoReciclavel(Reciclavel reciclavel) {
+		if(reciclavel.getTipo().getDescricao().equals(tipo.getDescricao()))
 			return true;
-		}
 		return false;
 	}
+	
+	public void addReciclavel(Reciclavel reciclavel) {
+		this.reciclaveis.add(reciclavel);
+	}
+	
 
 }
