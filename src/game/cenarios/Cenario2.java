@@ -10,7 +10,6 @@ import game.Objetos.Reciclavel;
 import game.Objetos.TipoReciclavel;
 import game.atores.Inimigo;
 import game.atores.Jogador;
-import jplay.GameImage;
 import jplay.Keyboard;
 import jplay.Scene;
 import jplay.Window;
@@ -57,6 +56,7 @@ public class Cenario2 {
 			jogador.mostrarEnergia(janela);
 			jogador.mostrarMochila(janela);
 			
+			gameOver();
 			vitoria();
 			
 			janela.update();
@@ -159,7 +159,13 @@ public class Cenario2 {
 			reciclaveis += lixeira.getReciclaveis().size();
 		}
 		if(reciclaveis == 11) {
-			new GameImage("src/resouces/sprites/telaInicial.jpg").draw();
+			new Vitoria(janela);
+		}
+	}
+	
+	public void gameOver() {
+		if(jogador.energia <= 0) {
+			new GameOver(janela);
 		}
 	}
 }

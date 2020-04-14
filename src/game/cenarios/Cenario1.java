@@ -44,7 +44,6 @@ public class Cenario1 {
 			jogador.caminho(cena);
 			cena.moveScene(jogador);
 			
-			
 			showLixeiras();
 			showReciclaveis();
 			showArvores();

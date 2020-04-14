@@ -15,7 +15,7 @@ public class GameOver {
 	public GameOver(Window window) {
 		janela = window;
 		teclado = janela.getKeyboard();
-		Audio.play("src/audios/musica.wav");
+		Audio.play("src/audios/gameOver.wav");
 		
 		run();
 	}
@@ -32,5 +32,4 @@ public class GameOver {
 		}
 	}
 	
-
 }
