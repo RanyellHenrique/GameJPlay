@@ -1,5 +1,7 @@
 package game.cenarios;
 
+import java.awt.event.KeyEvent;
+
 import game.audios.Audio;
 import jplay.GameImage;
 import jplay.Keyboard;
@@ -16,6 +18,7 @@ public class Vitoria {
 		janela = window;
 		teclado = janela.getKeyboard();
 		Audio.play("src/audios/vitoria.wav");
+		teclado.addKey(KeyEvent.VK_T, Keyboard.DETECT_INITIAL_PRESS_ONLY);
 		
 		run();
 	}
@@ -25,7 +28,7 @@ public class Vitoria {
 			plano.draw();
 			janela.update();
 		
-			if(teclado.keyDown(Keyboard.ENTER_KEY)) {
+			if(teclado.keyDown(KeyEvent.VK_T)) {
 				Audio.stop();
 				new TelaInicial(janela);
 			}	
