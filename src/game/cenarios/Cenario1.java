@@ -1,8 +1,10 @@
 package game.cenarios;
 
+import java.awt.Point;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.Vector;
 
 import game.Objetos.Lixeira;
 import game.Objetos.Objeto;
@@ -12,6 +14,8 @@ import game.atores.Inimigo;
 import game.atores.Jogador;
 import jplay.Keyboard;
 import jplay.Scene;
+import jplay.Sound;
+import jplay.TileInfo;
 import jplay.Window; 
 
 public class Cenario1 {
@@ -88,8 +92,8 @@ public class Cenario1 {
 		objects.add(new Objeto("src/resouces/sprites/arvore.png", 200, 400));
 		objects.add(new Objeto("src/resouces/sprites/arvore.png", 600, 400));
 		objects.add(new Objeto("src/resouces/sprites/arvore.png", 1000, 400));
-		objects.add(new Objeto("src/resouces/sprites/arvore.png", 1450, 150));
-		objects.add(new Objeto("src/resouces/sprites/arvore.png", 1550, 350));
+		objects.add(new Objeto("src/resouces/sprites/arvore.png", 1450, 110));
+		objects.add(new Objeto("src/resouces/sprites/arvore.png", 1500, 350));
 		objects.add(new Objeto("src/resouces/sprites/arvore.png", 1370, 500));
 	
 		return objects;
@@ -99,7 +103,7 @@ public class Cenario1 {
 		Random gerador = new Random();
 		List<Inimigo> inimigos = new ArrayList<>();
 		for (int i = 0; i < 10; i++) {
-			inimigos.add(new Inimigo(200 + gerador.nextInt(1580), 200 + gerador.nextInt(590)));
+			inimigos.add(new Inimigo(200 + gerador.nextInt(1200), 200 + gerador.nextInt(590)));
 		}
 		return inimigos;
 	}
@@ -161,7 +165,19 @@ public class Cenario1 {
 			reciclaveis += lixeira.getReciclaveis().size();
 		}
 		if(reciclaveis == 11) {
-			new Cenario2(janela);
+			Point min = new Point((int)jogador.x , (int)jogador.y);
+			Point max = new Point((int)jogador.x + jogador.width , (int)jogador.y + jogador.height);
+			
+			Vector<?> tiles = cena.getTilesFromPosition(min, max);
+			
+			for(int i=0; i<tiles.size(); i++) {
+				TileInfo tile = (TileInfo) tiles.elementAt(i);
+				if(jogador.collided(tile) && (tile.id == 16 || tile.id == 18)) {
+					new Sound("src/audios/porta.wav").play();
+					janela.delay(2000);
+					new Cenario2(janela);
+				}
+			}
 		}
 	}
 	
