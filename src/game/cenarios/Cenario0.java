@@ -64,7 +64,7 @@ public class Cenario0 {
 			TileInfo tile = (TileInfo) tiles.elementAt(i);
 			if(jogador.collided(tile) && tile.id == 19) {
 				new Sound("src/audios/porta.wav").play();
-				janela.delay(4000);
+				janela.delay(3000);
 				new Cenario1(janela);
 			}
 		}

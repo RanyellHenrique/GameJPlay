@@ -88,7 +88,9 @@ public class Cenario1 {
 		objects.add(new Objeto("src/resouces/sprites/arvore.png", 200, 400));
 		objects.add(new Objeto("src/resouces/sprites/arvore.png", 600, 400));
 		objects.add(new Objeto("src/resouces/sprites/arvore.png", 1000, 400));
-		objects.add(new Objeto("src/resouces/sprites/arvore.png", 1500, 400));
+		objects.add(new Objeto("src/resouces/sprites/arvore.png", 1450, 150));
+		objects.add(new Objeto("src/resouces/sprites/arvore.png", 1550, 350));
+		objects.add(new Objeto("src/resouces/sprites/arvore.png", 1370, 500));
 	
 		return objects;
 	}
@@ -158,7 +160,7 @@ public class Cenario1 {
 		for(Lixeira lixeira : lixeiras) {
 			reciclaveis += lixeira.getReciclaveis().size();
 		}
-		if(reciclaveis == 11 && jogador.x >= 750 && jogador.y >= 300) {
+		if(reciclaveis == 11) {
 			new Cenario2(janela);
 		}
 	}

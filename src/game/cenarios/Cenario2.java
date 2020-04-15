@@ -29,7 +29,7 @@ public class Cenario2 {
 		janela = window;
 		cena = new Scene();
 		cena.loadFromFile("src/resouces/snc/scenery2.scn");
-		jogador = new Jogador(650, 300);
+		jogador = new Jogador(05, 300);
 		arvores = gerandoArvores();
 		inimigos = gerandoInimigos();
 		gerandoLixeiras();
@@ -84,11 +84,9 @@ public class Cenario2 {
 	
 	public List<Objeto> gerandoArvores(){
 		List<Objeto> objects = new ArrayList<>();
-		for (int i = 0; i < 10; i++) {
-			if(i%2 == 0)
-				objects.add(new Objeto("src/resouces/sprites/arvore.png", 150 * (1 * i), 400 + 20 * i));
-			else
-				objects.add(new Objeto("src/resouces/sprites/arvore.png", 200 * (1 * i), 350 + 10 * i));
+		Random gerador = new Random();
+		for (int i = 0; i < 25; i++) {
+			objects.add(new Objeto("src/resouces/sprites/arvore.png", gerador.nextInt(1580), 50 + gerador.nextInt(550)));
 		}
 		return objects;
 	}

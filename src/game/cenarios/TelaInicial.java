@@ -36,6 +36,8 @@ public class TelaInicial {
 				janela.delay(1000);
 				new Cenario0(janela);
 			}else if(teclado.keyDown(KeyEvent.VK_Q)) {
+				new Sound("src/audios/coleta.wav").play();
+				janela.delay(1000);
 				System.exit(0);
 			}
 		}
