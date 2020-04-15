@@ -12,7 +12,6 @@ public class Vitoria {
 	private Window janela;
 	GameImage plano = new GameImage("src/resouces/sprites/vitoria.png");
 	private Keyboard teclado;
-
 	
 	public Vitoria(Window window) {
 		janela = window;

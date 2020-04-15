@@ -1,0 +1,82 @@
+60
+src/resouces/tiles/grama1.png
+src/resouces/tiles/grama2.png
+src/resouces/tiles/grama3.png
+src/resouces/tiles/paralelepipedo1.png
+src/resouces/tiles/paralelepipedo1.png
+src/resouces/tiles/calcada1.png
+src/resouces/tiles/calcada2.png
+src/resouces/tiles/asfalto1.png
+src/resouces/tiles/asfalto2.png
+src/resouces/tiles/asfalto3.png
+src/resouces/tiles/asfalto4.png
+src/resouces/tiles/asfalto5.png
+src/resouces/tiles/asfalto6.png
+src/resouces/tiles/faixa1.png
+src/resouces/tiles/faixa2.png
+src/resouces/tiles/assoalho.png
+src/resouces/tiles/porta1.png
+src/resouces/tiles/porta2.png
+src/resouces/tiles/tapete.png
+20
+src/resouces/tiles/predio1.png
+src/resouces/tiles/predio2.png
+src/resouces/tiles/predio3.png
+src/resouces/tiles/predio4.png
+src/resouces/tiles/predio5.png
+src/resouces/tiles/predio6.png
+src/resouces/tiles/predio7.png
+src/resouces/tiles/predio8.png
+src/resouces/tiles/predio9.png
+src/resouces/tiles/predio10.png
+src/resouces/tiles/predio11.png
+src/resouces/tiles/predio12.png
+src/resouces/tiles/predio13.png
+src/resouces/tiles/predio14.png
+src/resouces/tiles/predio15.png
+src/resouces/tiles/predio16.png
+src/resouces/tiles/predio17.png
+src/resouces/tiles/predio18.png
+src/resouces/tiles/predio19.png
+src/resouces/tiles/predio20.png
+src/resouces/tiles/predio2-1.png
+src/resouces/tiles/predio2-2.png
+src/resouces/tiles/predio2-3.png
+src/resouces/tiles/predio2-4.png
+src/resouces/tiles/predio2-5.png
+src/resouces/tiles/predio2-6.png
+src/resouces/tiles/predio2-7.png
+src/resouces/tiles/predio2-8.png
+src/resouces/tiles/parede1.png
+src/resouces/tiles/parede2.png
+src/resouces/tiles/parede3.png
+src/resouces/tiles/parede4.png
+src/resouces/tiles/paredecasa1.png
+src/resouces/tiles/paredecasa2.png
+src/resouces/tiles/fundo.png
+56
+57
+58
+59
+60 
+56 56 56 54 53 54 53 54 53 54 18 54 53 54 53 54 53 54 53 54 53 54 53 54 53 
+56 56 56 54 53 54 53 54 53 54 17 54 53 54 53 54 53 54 53 54 53 54 53 54 53  
+56 56 56 16 16 16 16 16 16 16 19 16 16 16 16 16 16 16 16 16 16 16 16 16 16  
+56 56 56 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 
+56 56 56 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 
+56 56 56 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 
+56 56 56 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 
+56 56 56 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 
+56 56 56 56 56 56 56 56 56 56 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 
+56 56 56 56 56 56 56 56 56 56 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 
+56 56 56 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16  
+56 56 56 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16  
+56 56 56 16 16 16 16 16 16 16 16 16 16 16 16 56 56 56 56 56 56 56 56 56 56
+56 56 56 16 16 16 16 16 16 16 56 56 16 16 16 56 56 56 56 56 56 56 56 56 56
+56 56 56 16 16 16 16 16 16 16 56 56 16 16 16 16 16 16 16 16 16 16 16 16 16 
+56 56 56 16 16 16 16 16 16 16 56 56 16 16 16 16 16 16 16 16 16 16 16 16 16  
+56 56 56 16 16 16 16 16 16 16 56 56 16 16 16 16 16 16 16 16 16 16 16 16 16  
+56 56 56 16 16 16 16 16 16 16 56 56 16 16 16 16 16 16 16 16 16 16 16 16 16  
+56 56 56 16 16 16 16 16 16 16 56 56 16 16 16 16 16 16 16 16 16 16 16 16 16   
+%
+src/resouces/sprites/fundopreto.png

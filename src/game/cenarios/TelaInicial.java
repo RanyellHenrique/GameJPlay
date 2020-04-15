@@ -5,6 +5,7 @@ import java.awt.event.KeyEvent;
 import game.audios.Audio;
 import jplay.GameImage;
 import jplay.Keyboard;
+import jplay.Sound;
 import jplay.Window;
 
 public class TelaInicial {
@@ -31,7 +32,9 @@ public class TelaInicial {
 		
 			if(teclado.keyDown(KeyEvent.VK_E)) {
 				Audio.stop();
-				new Cenario1(janela);
+				new Sound("src/audios/coleta.wav").play();
+				janela.delay(1000);
+				new Cenario0(janela);
 			}else if(teclado.keyDown(KeyEvent.VK_Q)) {
 				System.exit(0);
 			}

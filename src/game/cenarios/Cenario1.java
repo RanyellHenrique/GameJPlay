@@ -12,7 +12,7 @@ import game.atores.Inimigo;
 import game.atores.Jogador;
 import jplay.Keyboard;
 import jplay.Scene;
-import jplay.Window;
+import jplay.Window; 
 
 public class Cenario1 {
 	
@@ -25,11 +25,12 @@ public class Cenario1 {
 	private List<Reciclavel> reciclaveis = new ArrayList<>();
 	private List<Lixeira> lixeiras = new ArrayList<>();
 	
+
 	public Cenario1(Window window) {
 		janela = window;
 		cena = new Scene();
 		cena.loadFromFile("src/resouces/snc/scenery1.scn");
-		jogador = new Jogador(650, 300);
+		jogador = new Jogador(40, 200);
 		arvores = gerandoArvores();
 		inimigos = gerandoInimigos();
 		gerandoLixeiras();
@@ -39,7 +40,6 @@ public class Cenario1 {
 	
 	private void run() {
 		while(true) {
-			//cena.draw();
 			jogador.mover(janela, teclado);
 			jogador.caminho(cena);
 			cena.moveScene(jogador);
@@ -56,9 +56,10 @@ public class Cenario1 {
 			jogador.mostrarEnergia(janela);
 			jogador.mostrarMochila(janela);
 			
-			vitoria();
+			novaFase();
 			gameOver();
-			janela.update();
+			
+			janela.update();	
 		}
 	}
 	
@@ -83,12 +84,12 @@ public class Cenario1 {
 	
 	public List<Objeto> gerandoArvores(){
 		List<Objeto> objects = new ArrayList<>();
-		for (int i = 0; i < 10; i++) {
-			if(i%2 == 0)
-				objects.add(new Objeto("src/resouces/sprites/arvore.png", 150 * (1 * i), 400 + 20 * i));
-			else
-				objects.add(new Objeto("src/resouces/sprites/arvore.png", 200 * (1 * i), 350 + 10 * i));
-		}
+		
+		objects.add(new Objeto("src/resouces/sprites/arvore.png", 200, 400));
+		objects.add(new Objeto("src/resouces/sprites/arvore.png", 600, 400));
+		objects.add(new Objeto("src/resouces/sprites/arvore.png", 1000, 400));
+		objects.add(new Objeto("src/resouces/sprites/arvore.png", 1500, 400));
+	
 		return objects;
 	}
 	
@@ -96,7 +97,7 @@ public class Cenario1 {
 		Random gerador = new Random();
 		List<Inimigo> inimigos = new ArrayList<>();
 		for (int i = 0; i < 10; i++) {
-			inimigos.add(new Inimigo(gerador.nextInt(1580), 100 + gerador.nextInt(590)));
+			inimigos.add(new Inimigo(200 + gerador.nextInt(1580), 200 + gerador.nextInt(590)));
 		}
 		return inimigos;
 	}
@@ -152,12 +153,12 @@ public class Cenario1 {
 		}
 	}
 	
-	public void vitoria() {
+	public void novaFase() {
 		Integer reciclaveis = 0;
 		for(Lixeira lixeira : lixeiras) {
 			reciclaveis += lixeira.getReciclaveis().size();
 		}
-		if(reciclaveis == 11) {
+		if(reciclaveis == 11 && jogador.x >= 750 && jogador.y >= 300) {
 			new Cenario2(janela);
 		}
 	}
@@ -167,5 +168,4 @@ public class Cenario1 {
 			new GameOver(janela);
 		}
 	}
-
 }
