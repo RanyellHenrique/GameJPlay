@@ -62,7 +62,7 @@ public class Cenario0 {
 		
 		for(int i=0; i<tiles.size(); i++) {
 			TileInfo tile = (TileInfo) tiles.elementAt(i);
-			if(jogador.collided(tile) && tile.id == 19) {
+			if(jogador.collided(tile) && tile.id == 18) {
 				new Sound("src/audios/porta.wav").play();
 				janela.delay(3000);
 				new Cenario1(janela);
