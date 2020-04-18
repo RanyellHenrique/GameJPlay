@@ -31,7 +31,7 @@ public class TelaInicial {
 				Audio.stop();
 				new Sound("src/audios/coleta.wav").play();
 				janela.delay(1000);
-				ControleCenario.novoCenario(janela, 1);
+				ControleCenario.novoCenario(janela, 0);
 			} else if (teclado.keyDown(KeyEvent.VK_Q)) {
 				new Sound("src/audios/coleta.wav").play();
 				janela.delay(1000);

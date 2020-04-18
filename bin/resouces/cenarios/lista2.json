@@ -1,5 +1,31 @@
 [
 	{
+		"id" : 0,
+		"cena" : "src/resouces/snc/scenery0.scn",
+		"jogador" : { "x" : 40, "y" : 400 },
+		"inimigos" :[
+			{ "x" :  50, "y" :  50 },
+			{ "x" :  50, "y" : 500 },
+			{ "x" : 150, "y" : 150 },
+			{ "x" : 150, "y" : 250 },
+			{ "x" : 350, "y" : 350 },
+			{ "x" : 450, "y" : 450 },
+			{ "x" : 550, "y" : 550 },
+			{ "x" : 700, "y" : 300 },
+			{ "x" : 600, "y" : 400 },
+			{ "x" : 700, "y" :  50 }
+		],
+		"objetos" : [],
+		"reciclaveis" : [],
+		"lixeiras" : [
+			{"x" : 500, "y" : 100, "url": "src/resouces/sprites/lixeira.png", "tipo" : "Metal"},
+			{"x" : 550, "y" : 100, "url": "src/resouces/sprites/lixeira.png", "tipo" : "Vidro"},
+			{"x" : 600, "y" : 100, "url": "src/resouces/sprites/lixeira.png", "tipo" : "Papel"},
+			{"x" : 650, "y" : 100, "url": "src/resouces/sprites/lixeira.png", "tipo" : "Plástico"},
+			{"x" : 700, "y" : 100, "url": "src/resouces/sprites/lixeira.png", "tipo" : "Orgânico"}		
+		]
+	},
+	{
 		"id" : 1,
 		"cena" : "src/resouces/snc/scenery1.scn",
 		"jogador" : { "x" : 40, "y" : 200 },
@@ -36,7 +62,7 @@
 			{"x" : 950, "y" : 300, "url": "src/resouces/sprites/lixeira.png", "tipo" : "Orgânico"}		
 		]
 	},
-		{
+	{
 		"id" : 2,
 		"cena" : "src/resouces/snc/scenery2.scn",
 		"jogador" : { "x" : 40, "y" : 200 },
@@ -53,24 +79,30 @@
 			{ "x" : 900, "y" : 300 }
 		],
 		"objetos" : [
+			{ "x" : 200, "y" : 450, "url" : "src/resouces/sprites/arvore.png"},
+			{ "x" : 450, "y" : 270, "url" : "src/resouces/sprites/arvore.png"},
+			{ "x" : 150, "y" : 270, "url" : "src/resouces/sprites/arvore.png"},
 			{ "x" : 50, "y" : 350, "url" : "src/resouces/sprites/arvore.png"},
-			{ "x" : 600, "y" : 400, "url" : "src/resouces/sprites/arvore.png"},
-			{ "x" : 1000, "y" : 400, "url" : "src/resouces/sprites/arvore.png"},
-			{ "x" : 1450, "y" : 110, "url" : "src/resouces/sprites/arvore.png"},
-			{ "x" : 1500, "y" : 350, "url" : "src/resouces/sprites/arvore.png"},
-			{ "x" : 1370, "y" : 500, "url" : "src/resouces/sprites/arvore.png"},
-			{ "x" : 1370, "y" : 300, "url" : "src/resouces/sprites/arvore.png"},
-			{ "x" : 500, "y" : 500, "url" : "src/resouces/sprites/arvore.png"},
-			{ "x" : 1200, "y" : 350, "url" : "src/resouces/sprites/arvore.png"},
-			{ "x" : 200, "y" : 400, "url" : "src/resouces/sprites/arvore.png"}		
+			{ "x" : 270, "y" : 70, "url" : "src/resouces/sprites/arvore.png"},
+			{ "x" : 150, "y" : 380, "url" : "src/resouces/sprites/arvore.png"},
+			{ "x" : 170, "y" : 100, "url" : "src/resouces/sprites/arvore.png"},
+			{ "x" : 1350, "y" : 460, "url" : "src/resouces/sprites/arvore.png"},
+			{ "x" : 380, "y" : 500, "url" : "src/resouces/sprites/arvore.png"},
+			{ "x" : 480, "y" : 100, "url" : "src/resouces/sprites/arvore.png"},
+			{ "x" : 590, "y" : 250, "url" : "src/resouces/sprites/arvore.png"},
+			{ "x" : 900, "y" : 450, "url" : "src/resouces/sprites/arvore.png"},
+			{ "x" : 900, "y" : 80, "url" : "src/resouces/sprites/arvore.png"},
+			{ "x" : 1200, "y" : 40, "url" : "src/resouces/sprites/arvore.png"},
+			{ "x" : 1400, "y" : 90, "url" : "src/resouces/sprites/arvore.png"},
+			{ "x" : 1500, "y" : 450, "url" : "src/resouces/sprites/arvore.png"}		
 		],
 		"reciclaveis" : [],
 		"lixeiras" : [
-			{"x" : 1100, "y" : 300, "url": "src/resouces/sprites/lixeira.png", "tipo" : "Metal"},
-			{"x" : 1050, "y" : 300, "url": "src/resouces/sprites/lixeira.png", "tipo" : "Vidro"},
-			{"x" : 1000, "y" : 300, "url": "src/resouces/sprites/lixeira.png", "tipo" : "Papel"},
-			{"x" : 900, "y" : 300, "url": "src/resouces/sprites/lixeira.png", "tipo" : "Plástico"},
-			{"x" : 950, "y" : 300, "url": "src/resouces/sprites/lixeira.png", "tipo" : "Orgânico"}		
+			{"x" : 1620, "y" : 05, "url": "src/resouces/sprites/lixeira.png", "tipo" : "Metal"},
+			{"x" : 1560, "y" : 05, "url": "src/resouces/sprites/lixeira.png", "tipo" : "Vidro"},
+			{"x" : 1480, "y" : 05, "url": "src/resouces/sprites/lixeira.png", "tipo" : "Papel"},
+			{"x" : 1400, "y" : 05, "url": "src/resouces/sprites/lixeira.png", "tipo" : "Plástico"},
+			{"x" : 1320, "y" : 05, "url": "src/resouces/sprites/lixeira.png", "tipo" : "Orgânico"}		
 		]
 	}
 

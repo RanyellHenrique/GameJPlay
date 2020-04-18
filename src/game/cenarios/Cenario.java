@@ -139,7 +139,7 @@ public class Cenario {
 			
 			for(int i=0; i<tiles.size(); i++) {
 				TileInfo tile = (TileInfo) tiles.elementAt(i);
-				if(jogador.collided(tile) && (tile.id == 16 || tile.id == 18)) {
+				if(jogador.collided(tile) && (tile.id == 17 || tile.id == 19)) {
 					new Sound("src/audios/porta.wav").play();
 					janela.delay(2000);
 					ControleCenario.novoCenario(janela, this.id + 1);
