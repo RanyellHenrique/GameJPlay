@@ -15,7 +15,17 @@
 			{ "x" : 600, "y" : 400 },
 			{ "x" : 700, "y" :  50 }
 		],
-		"objetos" : [],
+		"objetos" : [
+			{ "x" :  1200, "y" : 30, "url"  : "src/resouces/sprites/livros.png", "caminho" : true},
+			{ "x" :  1300, "y" : 30, "url"  : "src/resouces/sprites/livros.png", "caminho" : true},
+			{ "x" : 40, "y" : 290, "url"  : "src/resouces/sprites/armario.png", "caminho" : true},
+			{ "x" :  50, "y" : 350, "url"  : "src/resouces/sprites/piano.png", "caminho" : true},
+			{ "x" :  70, "y" : 420, "url"  : "src/resouces/sprites/banco.png", "caminho" : true},
+			{ "x" :  550, "y" : 350, "url"  : "src/resouces/sprites/mesaecadeira.png", "caminho" : true},
+			{ "x" :  550, "y" : 420, "url"  : "src/resouces/sprites/mesaecadeira.png", "caminho" : true},
+			{ "x" :  550, "y" : 490, "url"  : "src/resouces/sprites/mesaecadeira.png", "caminho" : true},
+			{ "x" :  550, "y" : 180, "url"  : "src/resouces/sprites/sofa.png", "caminho" : true}
+		],
 		"reciclaveis" : [],
 		"lixeiras" : [
 			{"x" : 500, "y" : 100, "url": "src/resouces/sprites/lixeira.png", "tipo" : "Metal"},
@@ -42,16 +52,16 @@
 			{ "x" : 900, "y" : 300 }
 		],
 		"objetos" : [
-			{ "x" : 50, "y" : 350, "url" : "src/resouces/sprites/arvore.png"},
-			{ "x" : 600, "y" : 400, "url" : "src/resouces/sprites/arvore.png"},
-			{ "x" : 1000, "y" : 400, "url" : "src/resouces/sprites/arvore.png"},
-			{ "x" : 1450, "y" : 110, "url" : "src/resouces/sprites/arvore.png"},
-			{ "x" : 1500, "y" : 350, "url" : "src/resouces/sprites/arvore.png"},
-			{ "x" : 1370, "y" : 500, "url" : "src/resouces/sprites/arvore.png"},
-			{ "x" : 1370, "y" : 300, "url" : "src/resouces/sprites/arvore.png"},
-			{ "x" : 500, "y" : 500, "url" : "src/resouces/sprites/arvore.png"},
-			{ "x" : 1200, "y" : 350, "url" : "src/resouces/sprites/arvore.png"},
-			{ "x" : 200, "y" : 400, "url" : "src/resouces/sprites/arvore.png"}		
+			{ "x" :  50, "y" : 350, "url"  : "src/resouces/sprites/arvore.png", "caminho" : false},
+			{ "x" : 600, "y" : 400, "url"  : "src/resouces/sprites/arvore.png", "caminho" : false},
+			{ "x" : 1000, "y" : 400, "url" : "src/resouces/sprites/arvore.png", "caminho" : false},
+			{ "x" : 1450, "y" : 110, "url" : "src/resouces/sprites/arvore.png", "caminho" : false},
+			{ "x" : 1500, "y" : 350, "url" : "src/resouces/sprites/arvore.png", "caminho" : false},
+			{ "x" : 1370, "y" : 500, "url" : "src/resouces/sprites/arvore.png", "caminho" : false},
+			{ "x" : 1370, "y" : 300, "url" : "src/resouces/sprites/arvore.png", "caminho" : false},
+			{ "x" : 500, "y" : 500, "url"  : "src/resouces/sprites/arvore.png", "caminho" : false},
+			{ "x" : 1200, "y" : 350, "url" : "src/resouces/sprites/arvore.png", "caminho" : false},
+			{ "x" : 200, "y" : 400, "url"  : "src/resouces/sprites/arvore.png", "caminho" : false}		
 		],
 		"reciclaveis" : [],
 		"lixeiras" : [
@@ -79,22 +89,22 @@
 			{ "x" : 900, "y" : 300 }
 		],
 		"objetos" : [
-			{ "x" : 200, "y" : 450, "url" : "src/resouces/sprites/arvore.png"},
-			{ "x" : 450, "y" : 270, "url" : "src/resouces/sprites/arvore.png"},
-			{ "x" : 150, "y" : 270, "url" : "src/resouces/sprites/arvore.png"},
-			{ "x" : 50, "y" : 350, "url" : "src/resouces/sprites/arvore.png"},
-			{ "x" : 270, "y" : 70, "url" : "src/resouces/sprites/arvore.png"},
-			{ "x" : 150, "y" : 380, "url" : "src/resouces/sprites/arvore.png"},
-			{ "x" : 170, "y" : 100, "url" : "src/resouces/sprites/arvore.png"},
-			{ "x" : 1350, "y" : 460, "url" : "src/resouces/sprites/arvore.png"},
-			{ "x" : 380, "y" : 500, "url" : "src/resouces/sprites/arvore.png"},
-			{ "x" : 480, "y" : 100, "url" : "src/resouces/sprites/arvore.png"},
-			{ "x" : 590, "y" : 250, "url" : "src/resouces/sprites/arvore.png"},
-			{ "x" : 900, "y" : 450, "url" : "src/resouces/sprites/arvore.png"},
-			{ "x" : 900, "y" : 80, "url" : "src/resouces/sprites/arvore.png"},
-			{ "x" : 1200, "y" : 40, "url" : "src/resouces/sprites/arvore.png"},
-			{ "x" : 1400, "y" : 90, "url" : "src/resouces/sprites/arvore.png"},
-			{ "x" : 1500, "y" : 450, "url" : "src/resouces/sprites/arvore.png"}		
+			{ "x" : 200, "y" : 450, "url" : "src/resouces/sprites/arvore.png", "caminho" : false},
+			{ "x" : 450, "y" : 270, "url" : "src/resouces/sprites/arvore.png", "caminho" : false},
+			{ "x" : 150, "y" : 270, "url" : "src/resouces/sprites/arvore.png", "caminho" : false},
+			{ "x" : 50, "y" : 350, "url" : "src/resouces/sprites/arvore.png", "caminho" : false},
+			{ "x" : 270, "y" : 70, "url" : "src/resouces/sprites/arvore.png", "caminho" : false},
+			{ "x" : 150, "y" : 380, "url" : "src/resouces/sprites/arvore.png", "caminho" : false},
+			{ "x" : 170, "y" : 100, "url" : "src/resouces/sprites/arvore.png", "caminho" : false},
+			{ "x" : 1350, "y" : 460, "url" : "src/resouces/sprites/arvore.png", "caminho" : false},
+			{ "x" : 380, "y" : 500, "url" : "src/resouces/sprites/arvore.png", "caminho" : false},
+			{ "x" : 480, "y" : 100, "url" : "src/resouces/sprites/arvore.png", "caminho" : false},
+			{ "x" : 590, "y" : 250, "url" : "src/resouces/sprites/arvore.png", "caminho" : false},
+			{ "x" : 900, "y" : 450, "url" : "src/resouces/sprites/arvore.png", "caminho" : false},
+			{ "x" : 900, "y" : 80, "url" : "src/resouces/sprites/arvore.png", "caminho" : false},
+			{ "x" : 1200, "y" : 40, "url" : "src/resouces/sprites/arvore.png", "caminho" : false},
+			{ "x" : 1400, "y" : 90, "url" : "src/resouces/sprites/arvore.png", "caminho" : false},
+			{ "x" : 1500, "y" : 450, "url" : "src/resouces/sprites/arvore.png", "caminho" : false}		
 		],
 		"reciclaveis" : [],
 		"lixeiras" : [

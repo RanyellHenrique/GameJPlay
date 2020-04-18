@@ -57,6 +57,7 @@ public class Cenario {
 		while(true) {
 			jogador.mover(janela, teclado);
 			jogador.caminho(cena);
+			jogador.caminhoObjeto(objetos);
 			cena.moveScene(jogador);
 			
 			showLixeiras();
@@ -98,6 +99,7 @@ public class Cenario {
 			inimigo = inimigos.get(i);
 			inimigo.perseguir(jogador.x, jogador.y);
 			inimigo.caminho(cena);
+			inimigo.caminhoObjeto(objetos);
 			jogador.atirar(janela, cena, teclado, inimigo);
 			inimigo.morrer(cena, reciclaveis);
 			inimigo.atacar(jogador);

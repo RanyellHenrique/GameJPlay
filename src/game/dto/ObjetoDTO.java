@@ -5,12 +5,14 @@ public class ObjetoDTO {
 	private int x;
 	private int y;
 	private String url;
+	private boolean caminho;
 	
-	public ObjetoDTO(int x, int y, String url) {
+	public ObjetoDTO(int x, int y, String url, boolean caminho) {
 		super();
 		this.x = x;
 		this.y = y;
 		this.url = url;
+		this.setCaminho(caminho);
 	}
 
 	public int getX() {
@@ -35,6 +37,14 @@ public class ObjetoDTO {
 
 	public void setUrl(String url) {
 		this.url = url;
+	}
+
+	public boolean getCaminho() {
+		return caminho;
+	}
+
+	public void setCaminho(boolean caminho) {
+		this.caminho = caminho;
 	}
 	
 }

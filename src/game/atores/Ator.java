@@ -1,8 +1,10 @@
 package game.atores;
 
 import java.awt.Point;
+import java.util.List;
 import java.util.Vector;
 
+import game.Objetos.Objeto;
 import jplay.GameObject;
 import jplay.Scene;
 import jplay.Sprite;
@@ -49,6 +51,32 @@ public class Ator extends Sprite {
 			}
 		}
 	}
+	
+	public void caminhoObjeto(List<Objeto> objs) {
+		for(int i=0; i< objs.size(); i++) {
+			Objeto obj2 = objs.get(i);
+			if(controle.colisaoObjeto(this, obj2)) {
+				if(colisaoVertical(this, obj2)) {
+					if(obj2.y + obj2.height - 2 < this.y) {
+						this.y = obj2.y + obj2.height;
+					}
+					else if(obj2.y > this.y + this.height - 2) {
+						this.y = obj2.y - this.height;
+					}
+				}
+				if(colisaoHorizontal(this, obj2)) {
+					if(obj2.x > this.x + this.width - 2) {
+						this.x = obj2.x - this.width;
+					}
+					else { 
+						this.x = obj2.x + obj2.width;
+					}
+				}
+			}
+		}
+	}
+	
+	
 	
 	public boolean colisaoVertical(GameObject obj, GameObject obj2) {
 		if(obj2.x + obj2.width <= obj.x)
