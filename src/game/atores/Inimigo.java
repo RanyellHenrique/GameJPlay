@@ -4,6 +4,7 @@ import java.util.List;
 
 import game.Objetos.Reciclavel;
 import game.Objetos.TipoReciclavel;
+import game.dto.InimigoDTO;
 import jplay.Scene;
 import jplay.Sound;
 
@@ -27,6 +28,14 @@ public class Inimigo  extends Ator{
 		this.setTotalDuration(2000);
 		this.velocidade = 0.5;
 		this.energia = 5000;
+	}
+	
+	public Inimigo(InimigoDTO obj) {
+		super("src/resouces/sprites/zumbi.png", 16);
+		this.x = obj.getX();
+		this.y = obj.getY();
+		this.setTotalDuration(2000);
+		this.velocidade = 0.3;
 	}
 	
 	public double getAtaque() {

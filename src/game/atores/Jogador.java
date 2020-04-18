@@ -11,6 +11,7 @@ import game.Objetos.Objeto;
 import game.Objetos.Reciclavel;
 import game.Objetos.TipoReciclavel;
 import game.actions.ControleTiro;
+import game.dto.JogadorDTO;
 import jplay.Keyboard;
 import jplay.Scene;
 import jplay.Sound;
@@ -18,16 +19,23 @@ import jplay.Window;
 
 public class Jogador extends Ator{
 	
-	ControleTiro tiros = new ControleTiro();
-	Font f = new Font("arial", Font.BOLD, 30);
-	Font f2 = new Font("arial", Font.BOLD, 10);
+	public ControleTiro tiros = new ControleTiro();
 	private List<Reciclavel> mochila = new ArrayList<>();
 	private Objeto lixeira = new Objeto("src/resouces/sprites/mochila.png", 220, 0);
-
+	
+	Font f = new Font("arial", Font.BOLD, 30);
+	Font f2 = new Font("arial", Font.BOLD, 10);
+	
 	public Jogador(int x, int y) {
 		super("src/resouces/sprites/jogador.png", 20);
 		this.x = x;
 		this.y = y;
+	}
+	
+	public Jogador(JogadorDTO obj) {
+		super("src/resouces/sprites/jogador.png", 20);
+		this.x = obj.getX();
+		this.y = obj.getY();
 	}
 
 	public List<Reciclavel> getReciclaveis() {

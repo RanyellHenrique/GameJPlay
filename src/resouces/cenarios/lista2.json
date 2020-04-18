@@ -1,0 +1,77 @@
+[
+	{
+		"id" : 1,
+		"cena" : "src/resouces/snc/scenery1.scn",
+		"jogador" : { "x" : 40, "y" : 200 },
+		"inimigos" :[
+			{ "x" : 400, "y" : 300 },
+			{ "x" : 400, "y" :  80 },
+			{ "x" : 500, "y" : 500 },
+			{ "x" : 540, "y" : 1200 },
+			{ "x" : 700, "y" : 100 },
+			{ "x" :  70, "y" : 400 },
+			{ "x" : 1400, "y" : 100 },
+			{ "x" : 1300, "y" : 300 },
+			{ "x" : 400, "y" : 400 },
+			{ "x" : 900, "y" : 300 }
+		],
+		"objetos" : [
+			{ "x" : 50, "y" : 350, "url" : "src/resouces/sprites/arvore.png"},
+			{ "x" : 600, "y" : 400, "url" : "src/resouces/sprites/arvore.png"},
+			{ "x" : 1000, "y" : 400, "url" : "src/resouces/sprites/arvore.png"},
+			{ "x" : 1450, "y" : 110, "url" : "src/resouces/sprites/arvore.png"},
+			{ "x" : 1500, "y" : 350, "url" : "src/resouces/sprites/arvore.png"},
+			{ "x" : 1370, "y" : 500, "url" : "src/resouces/sprites/arvore.png"},
+			{ "x" : 1370, "y" : 300, "url" : "src/resouces/sprites/arvore.png"},
+			{ "x" : 500, "y" : 500, "url" : "src/resouces/sprites/arvore.png"},
+			{ "x" : 1200, "y" : 350, "url" : "src/resouces/sprites/arvore.png"},
+			{ "x" : 200, "y" : 400, "url" : "src/resouces/sprites/arvore.png"}		
+		],
+		"reciclaveis" : [],
+		"lixeiras" : [
+			{"x" : 1100, "y" : 300, "url": "src/resouces/sprites/lixeira.png", "tipo" : "Metal"},
+			{"x" : 1050, "y" : 300, "url": "src/resouces/sprites/lixeira.png", "tipo" : "Vidro"},
+			{"x" : 1000, "y" : 300, "url": "src/resouces/sprites/lixeira.png", "tipo" : "Papel"},
+			{"x" : 900, "y" : 300, "url": "src/resouces/sprites/lixeira.png", "tipo" : "Plástico"},
+			{"x" : 950, "y" : 300, "url": "src/resouces/sprites/lixeira.png", "tipo" : "Orgânico"}		
+		]
+	},
+		{
+		"id" : 2,
+		"cena" : "src/resouces/snc/scenery2.scn",
+		"jogador" : { "x" : 40, "y" : 200 },
+		"inimigos" :[
+			{ "x" : 400, "y" : 300 },
+			{ "x" : 400, "y" :  80 },
+			{ "x" : 500, "y" : 500 },
+			{ "x" : 540, "y" : 1200 },
+			{ "x" : 700, "y" : 100 },
+			{ "x" :  70, "y" : 400 },
+			{ "x" : 1400, "y" : 100 },
+			{ "x" : 1300, "y" : 300 },
+			{ "x" : 400, "y" : 400 },
+			{ "x" : 900, "y" : 300 }
+		],
+		"objetos" : [
+			{ "x" : 50, "y" : 350, "url" : "src/resouces/sprites/arvore.png"},
+			{ "x" : 600, "y" : 400, "url" : "src/resouces/sprites/arvore.png"},
+			{ "x" : 1000, "y" : 400, "url" : "src/resouces/sprites/arvore.png"},
+			{ "x" : 1450, "y" : 110, "url" : "src/resouces/sprites/arvore.png"},
+			{ "x" : 1500, "y" : 350, "url" : "src/resouces/sprites/arvore.png"},
+			{ "x" : 1370, "y" : 500, "url" : "src/resouces/sprites/arvore.png"},
+			{ "x" : 1370, "y" : 300, "url" : "src/resouces/sprites/arvore.png"},
+			{ "x" : 500, "y" : 500, "url" : "src/resouces/sprites/arvore.png"},
+			{ "x" : 1200, "y" : 350, "url" : "src/resouces/sprites/arvore.png"},
+			{ "x" : 200, "y" : 400, "url" : "src/resouces/sprites/arvore.png"}		
+		],
+		"reciclaveis" : [],
+		"lixeiras" : [
+			{"x" : 1100, "y" : 300, "url": "src/resouces/sprites/lixeira.png", "tipo" : "Metal"},
+			{"x" : 1050, "y" : 300, "url": "src/resouces/sprites/lixeira.png", "tipo" : "Vidro"},
+			{"x" : 1000, "y" : 300, "url": "src/resouces/sprites/lixeira.png", "tipo" : "Papel"},
+			{"x" : 900, "y" : 300, "url": "src/resouces/sprites/lixeira.png", "tipo" : "Plástico"},
+			{"x" : 950, "y" : 300, "url": "src/resouces/sprites/lixeira.png", "tipo" : "Orgânico"}		
+		]
+	}
+
+]

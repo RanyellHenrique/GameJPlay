@@ -3,6 +3,7 @@ package game.cenarios;
 import java.awt.Point;
 import java.util.Vector;
 
+import game.Objetos.Objeto;
 import game.atores.Jogador;
 import jplay.Keyboard;
 import jplay.Scene;
@@ -40,6 +41,7 @@ public class Cenario0 {
 			jogador.y += cena.getYOffset();
 	
 			jogador.mostrarEnergia(janela);
+			new Objeto("src/resouces/sprites/dica.png", 550, 0).draw();
 			
 			novaFase();
 			gameOver();
@@ -62,7 +64,7 @@ public class Cenario0 {
 		
 		for(int i=0; i<tiles.size(); i++) {
 			TileInfo tile = (TileInfo) tiles.elementAt(i);
-			if(jogador.collided(tile) && tile.id == 18) {
+			if(jogador.collided(tile) && tile.id == 17) {
 				new Sound("src/audios/porta.wav").play();
 				janela.delay(3000);
 				new Cenario1(janela);

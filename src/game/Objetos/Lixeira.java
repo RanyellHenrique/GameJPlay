@@ -3,6 +3,8 @@ package game.Objetos;
 import java.util.ArrayList;
 import java.util.List;
 
+import game.dto.LixeiraDTO;
+
 public class Lixeira  extends Objeto{
 	
 	private TipoReciclavel tipo;
@@ -12,6 +14,12 @@ public class Lixeira  extends Objeto{
 		super(fileName, x, y);
 		this.tipo = tipo;
 	}
+	
+	public Lixeira(LixeiraDTO obj) {
+		super(obj.getUrl(), obj.getX(), obj.getY());
+		this.tipo = retornaTipoReciclavel(obj.getTipo());
+	}
+	
 
 	public TipoReciclavel getTipo() {
 		return tipo;
@@ -39,5 +47,11 @@ public class Lixeira  extends Objeto{
 		this.reciclaveis.add(reciclavel);
 	}
 	
-
+	public TipoReciclavel retornaTipoReciclavel(String descricao) {
+		for(TipoReciclavel tipo : TipoReciclavel.values()) {
+			if(tipo.getDescricao().equals(descricao))
+				return tipo;
+		}
+		return null;
+	}
 }

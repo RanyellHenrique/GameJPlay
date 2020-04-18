@@ -170,6 +170,8 @@ public class Cenario1 {
 			
 			Vector<?> tiles = cena.getTilesFromPosition(min, max);
 			
+			new Objeto("src/resouces/sprites/dica2.png", 550, 0).draw();
+			
 			for(int i=0; i<tiles.size(); i++) {
 				TileInfo tile = (TileInfo) tiles.elementAt(i);
 				if(jogador.collided(tile) && (tile.id == 16 || tile.id == 18)) {
