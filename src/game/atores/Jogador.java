@@ -10,7 +10,7 @@ import game.Objetos.Lixeira;
 import game.Objetos.Objeto;
 import game.Objetos.Reciclavel;
 import game.Objetos.TipoReciclavel;
-import game.actions.ControleTiro;
+import game.acoes.ControleTiro;
 import game.dto.JogadorDTO;
 import jplay.Keyboard;
 import jplay.Scene;
@@ -49,6 +49,7 @@ public class Jogador extends Ator{
 	public void mover(Window window, Keyboard teclado) {
 
 		if(teclado.keyDown(Keyboard.LEFT_KEY)) {
+			this.setTotalDuration(2000);
 			if(this.x > 0) this.x -= velocidade;
 			if(direcao != 1) {
 				setSequence(4, 8);

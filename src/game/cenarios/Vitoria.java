@@ -27,7 +27,7 @@ public class Vitoria {
 		while(true) {
 			plano.draw();
 			janela.update();
-		
+			janela.delay(1000);
 			if(teclado.keyDown(KeyEvent.VK_T)) {
 				new Sound("src/audios/coleta.wav").play();
 				janela.delay(1000);

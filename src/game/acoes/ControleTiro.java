@@ -1,4 +1,4 @@
-package game.actions;
+package game.acoes;
 
 import java.util.LinkedList;
 

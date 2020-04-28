@@ -42,7 +42,7 @@ public class ControleCenario {
 		Gson gson = new GsonBuilder().create();
 		Type type = new TypeToken<ArrayList<CenarioDTO>>() {}.getType();
 		try {
-			BufferedReader br = new BufferedReader(new FileReader("src/resouces/cenarios/lista2.json"));
+			BufferedReader br = new BufferedReader(new FileReader("src/resouces/cenarios/cenarios.json"));
 			List<CenarioDTO> cenarios = gson.fromJson(br, type);
 			return cenario(cenarios, id, janela);
 		} 
@@ -51,11 +51,4 @@ public class ControleCenario {
 		}
 		return null;
 	}
-	
-	
-
-	
-
-
-
 }

@@ -118,5 +118,4 @@ public class Inimigo  extends Ator{
 		new Sound("src/audios/poof.wav").play();
 	}
 	
-	
 }

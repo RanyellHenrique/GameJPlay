@@ -55,30 +55,29 @@ public class Cenario {
 	
 	private void run() {
 		while(true) {
-			jogador.mover(janela, teclado);
-			jogador.caminho(cena);
-			jogador.caminhoObjeto(objetos);
 			cena.moveScene(jogador);
-			
+			showJogador();
 			showLixeiras();
 			showReciclaveis();
-			showArvores();
+			showObjetos();
 			showinimigos();
-			
-			jogador.x += cena.getXOffset();
-			jogador.y += cena.getYOffset();
-	
-			jogador.mostrarEnergia(janela);
-			jogador.mostrarMochila(janela);
-			
 			novaFase();
 			gameOver();
-			
-			janela.update();	
+			janela.update();
 		}
 	}
 	
-	public void showArvores() {
+	public void showJogador() {
+		jogador.mover(janela, teclado);
+		jogador.caminhoObjeto(objetos);
+		jogador.x += cena.getXOffset();
+		jogador.y += cena.getYOffset();
+		jogador.caminho(cena);
+		jogador.mostrarEnergia(janela);
+		jogador.mostrarMochila(janela);
+	}
+	
+	public void showObjetos() {
 		for(int i=0; i<objetos.size(); i++) {
 			if(jogador.y - 35 > objetos.get(i).y)
 				objetos.get(i).showObject(cena);
@@ -108,7 +107,6 @@ public class Cenario {
 		}	
 	}
 	
-	
 	public void showReciclaveis() {
 		Reciclavel reciclavel;
 		for (int i = 0; i < reciclaveis.size(); i++) {
@@ -125,7 +123,6 @@ public class Cenario {
 		}
 	}
 	
-	
 	public void novaFase() {
 		Integer reciclaveis = 0;
 		for(Lixeira lixeira : lixeiras) {
@@ -136,7 +133,6 @@ public class Cenario {
 			Point max = new Point((int)jogador.x + jogador.width , (int)jogador.y + jogador.height);
 			
 			Vector<?> tiles = cena.getTilesFromPosition(min, max);
-			
 			new Objeto("src/resouces/sprites/dica2.png", 550, 0).draw();
 			
 			for(int i=0; i<tiles.size(); i++) {
@@ -144,6 +140,8 @@ public class Cenario {
 				if(jogador.collided(tile) && (tile.id == 17 || tile.id == 19)) {
 					new Sound("src/audios/porta.wav").play();
 					janela.delay(2000);
+					if(this.id >= 2)
+						new Vitoria(janela);
 					ControleCenario.novoCenario(janela, this.id + 1);
 				}
 			}
