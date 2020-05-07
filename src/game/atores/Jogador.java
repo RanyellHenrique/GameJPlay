@@ -49,7 +49,7 @@ public class Jogador extends Ator{
 	public void mover(Window window, Keyboard teclado) {
 
 		if(teclado.keyDown(Keyboard.LEFT_KEY)) {
-			this.setTotalDuration(2000);
+			this.setTotalDuration(2500);
 			if(this.x > 0) this.x -= velocidade;
 			if(direcao != 1) {
 				setSequence(4, 8);
@@ -93,14 +93,12 @@ public class Jogador extends Ator{
 	public void coletarReciclavel(Reciclavel reciclavel, Keyboard teclado) {
 		if(this.collided(reciclavel) && teclado.keyDown(Keyboard.SPACE_KEY)) {
 			this.mochila.add(reciclavel);
-			somColeta();
+			new Sound("src/audios/coleta.wav").play();
 			reciclavel.x = 100_000_000;
 		}
 	}
 	
-	private void somColeta() {
-		new Sound("src/audios/coleta.wav").play();
-	}
+
 	
 	public void depositarReciclavel(Lixeira lixeira, Keyboard teclado) {
 		if(this.collided(lixeira)) {

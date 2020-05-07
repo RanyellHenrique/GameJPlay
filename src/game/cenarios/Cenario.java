@@ -131,9 +131,9 @@ public class Cenario {
 		if(reciclaveis == 10) {
 			Point min = new Point((int)jogador.x , (int)jogador.y);
 			Point max = new Point((int)jogador.x + jogador.width , (int)jogador.y + jogador.height);
-			
 			Vector<?> tiles = cena.getTilesFromPosition(min, max);
-			new Objeto("src/resouces/sprites/dica2.png", 550, 0).draw();
+			
+			new Objeto("src/resouces/sprites/fase_concluida.png", 550, 0).draw();
 			
 			for(int i=0; i<tiles.size(); i++) {
 				TileInfo tile = (TileInfo) tiles.elementAt(i);

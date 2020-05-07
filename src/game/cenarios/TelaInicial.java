@@ -11,7 +11,7 @@ import jplay.Window;
 public class TelaInicial {
 
 	private Window janela;
-	private GameImage plano = new GameImage("src/resouces/sprites/telaInicial.png");
+	private GameImage plano = new GameImage("src/resouces/sprites/tela_inicial.png");
 	private Keyboard teclado;
 
 	public TelaInicial(Window window) {
@@ -20,6 +20,7 @@ public class TelaInicial {
 		Audio.play("src/audios/vitoria.wav");
 		teclado.addKey(KeyEvent.VK_E, Keyboard.DETECT_INITIAL_PRESS_ONLY);
 		teclado.addKey(KeyEvent.VK_Q, Keyboard.DETECT_INITIAL_PRESS_ONLY);
+		teclado.addKey(KeyEvent.VK_T, Keyboard.DETECT_INITIAL_PRESS_ONLY);
 		run();
 	}
 
@@ -36,6 +37,10 @@ public class TelaInicial {
 				new Sound("src/audios/coleta.wav").play();
 				janela.delay(1000);
 				System.exit(0);
+			} else if (teclado.keyDown(KeyEvent.VK_T)) {
+				new Sound("src/audios/coleta.wav").play();
+				janela.delay(1000);
+				new TelaDeControle(janela);
 			}
 		}
 	}
