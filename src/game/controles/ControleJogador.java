@@ -1,6 +1,6 @@
-package game.atores;
+package game.controles;
 
-import game.Objetos.Objeto;
+import game.entidades.Objeto;
 import jplay.GameObject;
 import jplay.TileInfo;
 

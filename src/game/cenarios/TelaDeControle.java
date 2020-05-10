@@ -2,7 +2,7 @@ package game.cenarios;
 
 import java.awt.event.KeyEvent;
 
-import game.audios.Audio;
+import game.controles.ControleAudio;
 import jplay.GameImage;
 import jplay.Keyboard;
 import jplay.Sound;
@@ -17,7 +17,7 @@ public class TelaDeControle {
 	public TelaDeControle(Window window) {
 		janela = window;
 		teclado = janela.getKeyboard();
-		Audio.play("src/audios/vitoria.wav");
+		ControleAudio.play("src/resouces/audios/vitoria.wav");
 		teclado.addKey(KeyEvent.VK_T, Keyboard.DETECT_INITIAL_PRESS_ONLY);
 		
 		run();
@@ -31,7 +31,7 @@ public class TelaDeControle {
 			if(teclado.keyDown(KeyEvent.VK_T)) {
 				new Sound("src/audios/coleta.wav").play();
 				janela.delay(1000);
-				Audio.stop();
+				ControleAudio.stop();
 				new TelaInicial(janela);
 			}	
 		}

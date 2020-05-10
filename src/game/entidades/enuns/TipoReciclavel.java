@@ -1,4 +1,4 @@
-package game.Objetos;
+package game.entidades.enuns;
 
 public enum TipoReciclavel {
 	PAPEL("Papel", "src/resouces/sprites/papel.png"),

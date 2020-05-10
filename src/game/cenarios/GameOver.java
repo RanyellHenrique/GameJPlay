@@ -2,7 +2,7 @@ package game.cenarios;
 
 import java.awt.event.KeyEvent;
 
-import game.audios.Audio;
+import game.controles.ControleAudio;
 import jplay.GameImage;
 import jplay.Keyboard;
 import jplay.Sound;
@@ -18,7 +18,7 @@ public class GameOver {
 	public GameOver(Window window) {
 		janela = window;
 		teclado = janela.getKeyboard();
-		Audio.play("src/audios/gameOver.wav");
+		ControleAudio.play("src/audios/gameOver.wav");
 		teclado.addKey(KeyEvent.VK_T, Keyboard.DETECT_INITIAL_PRESS_ONLY);
 		
 		run();
@@ -30,7 +30,7 @@ public class GameOver {
 			janela.update();
 		
 			if(teclado.keyDown(KeyEvent.VK_T)) {
-				Audio.stop();
+				ControleAudio.stop();
 				new Sound("src/audios/coleta.wav").play();
 				janela.delay(1000);
 				new TelaInicial(janela);

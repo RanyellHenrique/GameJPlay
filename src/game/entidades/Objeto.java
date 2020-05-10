@@ -1,4 +1,4 @@
-package game.Objetos;
+package game.entidades;
 
 import game.dto.ObjetoDTO;
 import jplay.Scene;

@@ -1,8 +1,8 @@
-package game.audios;
+package game.controles;
 
 import jplay.Sound;
 
-public class Audio {
+public class ControleAudio {
 	
 	private static Sound musica;
 	
@@ -10,12 +10,12 @@ public class Audio {
 	public static void play(String audio) {
 		stop();
 		musica = new Sound(audio);
-		Audio.musica.play();
-		Audio.musica.setRepeat(true);
+		ControleAudio.musica.play();
+		ControleAudio.musica.setRepeat(true);
 	}
 	
 	public static void stop() {
-		if(Audio.musica != null) {
+		if(ControleAudio.musica != null) {
 			musica.stop();
 		}
 	}

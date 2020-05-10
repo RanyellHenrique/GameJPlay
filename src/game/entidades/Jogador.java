@@ -1,4 +1,4 @@
-package game.atores;
+package game.entidades;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -6,12 +6,9 @@ import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
 
-import game.Objetos.Lixeira;
-import game.Objetos.Objeto;
-import game.Objetos.Reciclavel;
-import game.Objetos.TipoReciclavel;
-import game.acoes.ControleTiro;
+import game.controles.ControleTiro;
 import game.dto.JogadorDTO;
+import game.entidades.enuns.TipoReciclavel;
 import jplay.Keyboard;
 import jplay.Scene;
 import jplay.Sound;
@@ -93,7 +90,7 @@ public class Jogador extends Ator{
 	public void coletarReciclavel(Reciclavel reciclavel, Keyboard teclado) {
 		if(this.collided(reciclavel) && teclado.keyDown(Keyboard.SPACE_KEY)) {
 			this.mochila.add(reciclavel);
-			new Sound("src/audios/coleta.wav").play();
+			new Sound("src/resouces/audios/coleta.wav").play();
 			reciclavel.x = 100_000_000;
 		}
 	}
@@ -105,7 +102,7 @@ public class Jogador extends Ator{
 				if(lixeira.tipoReciclavel(mochila.get(i)) && teclado.keyDown(Keyboard.SPACE_KEY)) {
 					lixeira.addReciclavel(mochila.get(i));
 					mochila.remove(i);
-					new Sound("src/audios/deposito.wav").play();
+					new Sound("src/resouces/audios/deposito.wav").play();
 				}
 			}
 		}

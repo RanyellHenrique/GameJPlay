@@ -1,10 +1,10 @@
-package game.atores;
+package game.entidades;
 
 import java.awt.Point;
 import java.util.List;
 import java.util.Vector;
 
-import game.Objetos.Objeto;
+import game.controles.ControleJogador;
 import jplay.GameObject;
 import jplay.Scene;
 import jplay.Sprite;

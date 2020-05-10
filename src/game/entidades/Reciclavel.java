@@ -1,8 +1,9 @@
-package game.Objetos;
+package game.entidades;
 
 import java.util.List;
 
 import game.dto.LixeiraDTO;
+import game.entidades.enuns.TipoReciclavel;
 
 public class Reciclavel extends Objeto {
 	

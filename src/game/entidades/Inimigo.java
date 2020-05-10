@@ -1,10 +1,9 @@
-package game.atores;
+package game.entidades;
 
 import java.util.List;
 
-import game.Objetos.Reciclavel;
-import game.Objetos.TipoReciclavel;
 import game.dto.InimigoDTO;
+import game.entidades.enuns.TipoReciclavel;
 import jplay.Scene;
 import jplay.Sound;
 
@@ -109,7 +108,7 @@ public class Inimigo  extends Ator{
 	public void droparLixo(Scene cena, List<Reciclavel> objetosReciclaveis) {
 		if(!morreu) {
 			objetosReciclaveis.add(new Reciclavel("", (int)this.x, (int)this.y, TipoReciclavel.random()));
-			new Sound("src/audios/poof.wav").play();
+			new Sound("src/resouces/audios/poof.wav").play();
 		}
 	}
 	

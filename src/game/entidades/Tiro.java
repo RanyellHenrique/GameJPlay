@@ -1,4 +1,4 @@
-package game.acoes;
+package game.entidades;
 
 import jplay.Sprite;
 

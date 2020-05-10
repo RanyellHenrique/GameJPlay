@@ -1,4 +1,4 @@
-package game.cenarios;
+package game.controles;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -11,11 +11,12 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
-import game.Objetos.Lixeira;
-import game.Objetos.Objeto;
-import game.atores.Inimigo;
-import game.atores.Jogador;
 import game.dto.CenarioDTO;
+import game.entidades.Cenario;
+import game.entidades.Inimigo;
+import game.entidades.Jogador;
+import game.entidades.Lixeira;
+import game.entidades.Objeto;
 import jplay.Window;
 
 public class ControleCenario {

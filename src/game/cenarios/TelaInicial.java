@@ -2,7 +2,8 @@ package game.cenarios;
 
 import java.awt.event.KeyEvent;
 
-import game.audios.Audio;
+import game.controles.ControleAudio;
+import game.controles.ControleCenario;
 import jplay.GameImage;
 import jplay.Keyboard;
 import jplay.Sound;
@@ -17,7 +18,7 @@ public class TelaInicial {
 	public TelaInicial(Window window) {
 		janela = window;
 		teclado = janela.getKeyboard();
-		Audio.play("src/audios/vitoria.wav");
+		ControleAudio.play("src/resouces/audios/vitoria.wav");
 		teclado.addKey(KeyEvent.VK_E, Keyboard.DETECT_INITIAL_PRESS_ONLY);
 		teclado.addKey(KeyEvent.VK_Q, Keyboard.DETECT_INITIAL_PRESS_ONLY);
 		teclado.addKey(KeyEvent.VK_T, Keyboard.DETECT_INITIAL_PRESS_ONLY);
@@ -29,16 +30,16 @@ public class TelaInicial {
 			plano.draw();
 			janela.update();
 			if (teclado.keyDown(KeyEvent.VK_E)) {
-				Audio.stop();
-				new Sound("src/audios/coleta.wav").play();
+				ControleAudio.stop();
+				new Sound("src/resouces/audios/coleta.wav").play();
 				janela.delay(1000);
 				ControleCenario.novoCenario(janela, 0);
 			} else if (teclado.keyDown(KeyEvent.VK_Q)) {
-				new Sound("src/audios/coleta.wav").play();
+				new Sound("src/resouces/audios/coleta.wav").play();
 				janela.delay(1000);
 				System.exit(0);
 			} else if (teclado.keyDown(KeyEvent.VK_T)) {
-				new Sound("src/audios/coleta.wav").play();
+				new Sound("src/resouces/audios/coleta.wav").play();
 				janela.delay(1000);
 				new TelaDeControle(janela);
 			}

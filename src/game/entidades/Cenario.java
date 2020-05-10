@@ -1,15 +1,13 @@
-package game.cenarios;
+package game.entidades;
 
 import java.awt.Point;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
-import game.Objetos.Lixeira;
-import game.Objetos.Objeto;
-import game.Objetos.Reciclavel;
-import game.atores.Inimigo;
-import game.atores.Jogador;
+import game.cenarios.GameOver;
+import game.cenarios.Vitoria;
+import game.controles.ControleCenario;
 import jplay.Keyboard;
 import jplay.Scene;
 import jplay.Sound;
@@ -138,7 +136,7 @@ public class Cenario {
 			for(int i=0; i<tiles.size(); i++) {
 				TileInfo tile = (TileInfo) tiles.elementAt(i);
 				if(jogador.collided(tile) && (tile.id == 17 || tile.id == 19)) {
-					new Sound("src/audios/porta.wav").play();
+					new Sound("src/resouces/audios/porta.wav").play();
 					janela.delay(2000);
 					if(this.id >= 2)
 						new Vitoria(janela);

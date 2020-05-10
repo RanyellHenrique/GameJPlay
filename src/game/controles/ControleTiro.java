@@ -1,8 +1,9 @@
-package game.acoes;
+package game.controles;
 
 import java.util.LinkedList;
 
-import game.atores.Ator;
+import game.entidades.Ator;
+import game.entidades.Tiro;
 import jplay.Scene;
 import jplay.Sound;
 
@@ -37,7 +38,7 @@ public class ControleTiro {
 	}
 
 	private void somDisparo() {
-		new Sound("src/audios/flecha.wav").play();
+		new Sound("src/resouces/audios/flecha.wav").play();
 	}
 
 }
