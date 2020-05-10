@@ -46,7 +46,7 @@ public class Jogador extends Ator{
 		this.mochila = reciclaveis;
 	}
 
-	public void mover(Window window, Keyboard teclado) {
+	public void mover(Window janela, Keyboard teclado) {
 
 		if(teclado.keyDown(Keyboard.LEFT_KEY)) {
 			this.setTotalDuration(2500);
@@ -57,7 +57,7 @@ public class Jogador extends Ator{
 			}movendo = true;
 		}
 		else if(teclado.keyDown(Keyboard.RIGHT_KEY)) {
-			if(this.x < window.getWidth() - 60) this.x += velocidade;
+			if(this.x < janela.getWidth() - 60) this.x += velocidade;
 			if(direcao != 2) {
 				setSequence(8, 12);
 				direcao = 2;
@@ -71,7 +71,7 @@ public class Jogador extends Ator{
 			}movendo = true;		
 		}
 		else if(teclado.keyDown(Keyboard.DOWN_KEY)) {
-			if(this.y < window.getHeight() - 60) this.y += velocidade;
+			if(this.y < janela.getHeight() - 60) this.y += velocidade;
 			if(direcao != 5) {
 				setSequence(0, 4);
 				direcao = 5;
@@ -98,7 +98,6 @@ public class Jogador extends Ator{
 		}
 	}
 	
-
 	
 	public void depositarReciclavel(Lixeira lixeira, Keyboard teclado) {
 		if(this.collided(lixeira)) {
@@ -106,22 +105,15 @@ public class Jogador extends Ator{
 				if(lixeira.tipoReciclavel(mochila.get(i)) && teclado.keyDown(Keyboard.SPACE_KEY)) {
 					lixeira.addReciclavel(mochila.get(i));
 					mochila.remove(i);
-					somDeposito();
+					new Sound("src/audios/deposito.wav").play();
 				}
 			}
 		}
 	}
 	
-	private void somDeposito() {
-		new Sound("src/audios/deposito.wav").play();
-	}
-	
-	public void mostrarEnergia(Window janela) {
-		janela.drawText("HP: " + energia , 30, 30, Color.BLACK, f);
-	}
-	
-	public void mostrarMochila(Window janela) {
+	public void painelDeInformacao(Window janela) {
 		lixeira.draw();
+		janela.drawText("HP: " + energia , 30, 30, Color.BLACK, f);
 		janela.drawText("X" + Reciclavel.quantidadeTipoReciclavel(mochila, TipoReciclavel.VIDRO),
 				220, 40, Color.BLACK, f2);
 		janela.drawText("X" + Reciclavel.quantidadeTipoReciclavel(mochila, TipoReciclavel.PAPEL),

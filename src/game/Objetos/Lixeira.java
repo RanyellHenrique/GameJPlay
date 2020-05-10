@@ -6,7 +6,6 @@ import java.util.List;
 import game.dto.LixeiraDTO;
 
 public class Lixeira  extends Objeto{
-	
 	private TipoReciclavel tipo;
 	private List<Reciclavel> reciclaveis = new ArrayList<>();
 

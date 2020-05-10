@@ -21,12 +21,13 @@ public class Cenario {
 	public Integer id;
 	public Window janela;
 	public Scene cena;
-	public Jogador jogador;
 	public Keyboard teclado;
-	public List<Objeto> objetos = new ArrayList<>();
+	public Jogador jogador;
 	public List<Inimigo> inimigos = new ArrayList<>();
+	public List<Objeto> objetos = new ArrayList<>();
 	public List<Reciclavel> reciclaveis = new ArrayList<>();
 	public List<Lixeira> lixeiras = new ArrayList<>();
+	
 	
 	public Cenario() {
 		
@@ -73,8 +74,7 @@ public class Cenario {
 		jogador.x += cena.getXOffset();
 		jogador.y += cena.getYOffset();
 		jogador.caminho(cena);
-		jogador.mostrarEnergia(janela);
-		jogador.mostrarMochila(janela);
+		jogador.painelDeInformacao(janela);
 	}
 	
 	public void showObjetos() {

@@ -11,7 +11,7 @@ import jplay.Sound;
 public class Inimigo  extends Ator{
 	
 	private double ataque = 1;
-	private boolean morrer = false;
+	private boolean morreu = false;
 
 	public Inimigo(int x, int y) {
 		super("src/resouces/sprites/zumbi.png", 16);
@@ -46,12 +46,12 @@ public class Inimigo  extends Ator{
 		this.ataque = ataque;
 	}
 
-	public boolean getMorrer() {
-		return morrer;
+	public boolean getmorreu() {
+		return morreu;
 	}
 
-	public void setMorrer(boolean morrer) {
-		this.morrer = morrer;
+	public void setmorreu(boolean morreu) {
+		this.morreu = morreu;
 	}
 
 	public void perseguir(double x, double y) {
@@ -95,27 +95,22 @@ public class Inimigo  extends Ator{
 			this.ataque = 0;
 			this.direcao = 0;
 			this.movendo = false;
-			lixoDropado(cena, objetosReciclaveis);
-			morrer = true;
+			droparLixo(cena, objetosReciclaveis);
+			morreu = true;
 			this.x = 100_000_000;
 		}
 	}
-	
 	
 	public void atacar(Jogador jogador) {
 		if(this.collided(jogador))
 			jogador.energia -= this.ataque ;
 	}
 	
-	public void lixoDropado(Scene cena, List<Reciclavel> objetosReciclaveis) {
-		if(!morrer) {
+	public void droparLixo(Scene cena, List<Reciclavel> objetosReciclaveis) {
+		if(!morreu) {
 			objetosReciclaveis.add(new Reciclavel("", (int)this.x, (int)this.y, TipoReciclavel.random()));
-			somLixoDropado();
+			new Sound("src/audios/poof.wav").play();
 		}
-	}
-	
-	private void somLixoDropado() {
-		new Sound("src/audios/poof.wav").play();
 	}
 	
 }
