@@ -6,13 +6,14 @@ public class ObjetoDTO {
 	private int y;
 	private String url;
 	private boolean caminho;
+	private int idCenario;
 	
-	public ObjetoDTO(int x, int y, String url, boolean caminho) {
-		super();
+	public ObjetoDTO(int x, int y, String url, boolean caminho, int idCenario) {
 		this.x = x;
 		this.y = y;
 		this.url = url;
 		this.setCaminho(caminho);
+		this.idCenario = idCenario;
 	}
 
 	public int getX() {
@@ -45,6 +46,14 @@ public class ObjetoDTO {
 
 	public void setCaminho(boolean caminho) {
 		this.caminho = caminho;
+	}
+
+	public int getIdCenario() {
+		return idCenario;
+	}
+
+	public void setIdCenario(int idCenario) {
+		this.idCenario = idCenario;
 	}
 	
 }
