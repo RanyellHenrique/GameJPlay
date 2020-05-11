@@ -12,21 +12,10 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
 import game.dao.CenarioDAO;
-import game.dao.InimigoDAO;
-import game.dao.JogadorDAO;
-import game.dao.LixeiraDAO;
-import game.dao.ObjetoDAO;
-import game.dao.ReciclavelDAO;
 import game.dto.CenarioDTO;
 
 public class CenarioDaoGson implements CenarioDAO {
-	
-	public InimigoDAO inimigos;
-	public JogadorDAO jogador;
-	public LixeiraDAO lixeiras;
-	public ObjetoDAO objetos;
-	public ReciclavelDAO reciclaveis;
-	
+
 	public CenarioDTO burcarPorIdCenario(int id)  {
 		for(CenarioDTO c : buscarTodos()) {
 			if(c.getId() == id)
@@ -39,7 +28,7 @@ public class CenarioDaoGson implements CenarioDAO {
 		Gson gson = new GsonBuilder().create();
 		Type type = new TypeToken<ArrayList<CenarioDTO>>() {}.getType();
 		try {
-			BufferedReader br = new BufferedReader(new FileReader("src/resouces/cenarios/cenarios2.json"));
+			BufferedReader br = new BufferedReader(new FileReader("src/resouces/cenarios/cenarios.json"));
 			return gson.fromJson(br, type);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();

@@ -1,14 +1,14 @@
 package game.servicos;
 
 import game.dao.CenarioDAO;
-import game.dao.impl.CenarioDaoGson;
+import game.dao.DAOFactory;
 import game.dto.CenarioDTO;
 import game.entidades.Cenario;
 import jplay.Window;
 
 public class CenarioServicos {
 	
-	public CenarioDAO cenarioDAO = new CenarioDaoGson();
+	public CenarioDAO cenarioDAO = DAOFactory.createCenario();
 	public InimigoServicos inimigoServicos = new InimigoServicos();
 	public JogadorServicos jogadorServicos = new JogadorServicos();
 	public LixeiraServicos lixeiraServicos = new LixeiraServicos();
