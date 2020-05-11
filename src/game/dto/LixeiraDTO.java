@@ -6,12 +6,13 @@ public class LixeiraDTO {
 	private int y;
 	private String url;
 	private String tipo;
+	private int idCenario;
 	
-	public LixeiraDTO(int x, int y, String url, String tipo) {
-		super();
+	public LixeiraDTO(int x, int y, String url, String tipo, int idCenario) {
 		this.x = x;
 		this.y = y;
 		this.url = url;
+		this.idCenario = idCenario;
 	}
 
 	public int getX() {
@@ -44,6 +45,14 @@ public class LixeiraDTO {
 
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
+	}
+
+	public int getIdCenario() {
+		return idCenario;
+	}
+
+	public void setIdCenario(int idCenario) {
+		this.idCenario = idCenario;
 	}
 
 }

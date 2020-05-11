@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
-import game.controles.ControleCenario;
+import game.servicos.CenarioServicos;
 import game.telas.TelaGameOver;
 import game.telas.TelaVitoria;
 import jplay.Keyboard;
@@ -140,7 +140,8 @@ public class Cenario {
 					janela.delay(2000);
 					if(this.id >= 2)
 						new TelaVitoria(janela);
-					ControleCenario.novoCenario(janela, this.id + 1);
+					CenarioServicos ce = new CenarioServicos();
+					ce.buscarPorId(this.id + 1, janela);
 				}
 			}
 		}

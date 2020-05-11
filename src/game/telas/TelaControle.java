@@ -29,7 +29,7 @@ public class TelaControle {
 			janela.update();
 			janela.delay(1000);
 			if(teclado.keyDown(KeyEvent.VK_T)) {
-				new Sound("src/audios/coleta.wav").play();
+				new Sound("src/resouces/audios/coleta.wav").play();
 				janela.delay(1000);
 				ControleAudio.stop();
 				new TelaInicial(janela);

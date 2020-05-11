@@ -2,7 +2,7 @@ package game.entidades;
 
 import java.util.List;
 
-import game.dto.LixeiraDTO;
+import game.dto.ReciclavelDTO;
 import game.entidades.enuns.TipoReciclavel;
 
 public class Reciclavel extends Objeto {
@@ -14,7 +14,7 @@ public class Reciclavel extends Objeto {
 		this.tipo = tipo;
 	}
 	
-	public Reciclavel(LixeiraDTO obj) {
+	public Reciclavel(ReciclavelDTO obj) {
 		super(obj.getUrl(), obj.getX(), obj.getY());
 		this.tipo = retornaTipoReciclavel(obj.getTipo());
 	}

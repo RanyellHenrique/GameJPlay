@@ -13,15 +13,14 @@ import com.google.gson.reflect.TypeToken;
 
 import game.dao.ObjetoDAO;
 import game.dto.ObjetoDTO;
-import game.entidades.Objeto;
 
 public class ObjetoDaoGson implements ObjetoDAO {
 	
-	public List<Objeto> burcarPorIdCenario(int id)  {
-		List<Objeto> objetos = new ArrayList<>();
+	public List<ObjetoDTO> burcarPorIdCenario(int id)  {
+		List<ObjetoDTO> objetos = new ArrayList<>();
 		for(ObjetoDTO o : buscarTodos()) {
 			if(o.getIdCenario() == id)
-				objetos.add(new Objeto(o));
+				objetos.add(o);
 				
 		}
 		return objetos;

@@ -11,24 +11,24 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
-import game.dao.InimigoDAO;
-import game.dto.InimigoDTO;
+import game.dao.ReciclavelDAO;
+import game.dto.ReciclavelDTO;
 
-public class InimigoDaoGson implements InimigoDAO {
+public class ReciclavelDaoGson implements ReciclavelDAO {
 	
-	public List<InimigoDTO> burcarPorIdCenario(int id)  {
-		List<InimigoDTO> inimigos = new ArrayList<>();
-		for(InimigoDTO i : buscarTodos()) {
-			if(i.getIdCenario() == id)
-				inimigos.add(i);
+	public List<ReciclavelDTO> burcarPorIdCenario(int id)  {
+		List<ReciclavelDTO> reciclaveis = new ArrayList<>();
+		for(ReciclavelDTO r : buscarTodos()) {
+			if(r.getIdCenario() == id)
+				reciclaveis.add(r);
 				
 		}
-		return inimigos;
+		return reciclaveis;
 	}
 	
-	public List<InimigoDTO> buscarTodos(){
+	public List<ReciclavelDTO> buscarTodos(){
 		Gson gson = new GsonBuilder().create();
-		Type type = new TypeToken<ArrayList<InimigoDTO>>() {}.getType();
+		Type type = new TypeToken<ArrayList<ReciclavelDTO>>() {}.getType();
 		try {
 			BufferedReader br = new BufferedReader(new FileReader("src/resouces/cenarios/inimigos.json"));
 			return gson.fromJson(br, type);

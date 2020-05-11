@@ -3,7 +3,7 @@ package game.telas;
 import java.awt.event.KeyEvent;
 
 import game.controles.ControleAudio;
-import game.controles.ControleCenario;
+import game.servicos.CenarioServicos;
 import jplay.GameImage;
 import jplay.Keyboard;
 import jplay.Sound;
@@ -33,7 +33,8 @@ public class TelaInicial {
 				ControleAudio.stop();
 				new Sound("src/resouces/audios/coleta.wav").play();
 				janela.delay(1000);
-				ControleCenario.novoCenario(janela, 0);
+				CenarioServicos c = new CenarioServicos();
+				c.buscarPorId(0, janela);
 			} else if (teclado.keyDown(KeyEvent.VK_Q)) {
 				new Sound("src/resouces/audios/coleta.wav").play();
 				janela.delay(1000);

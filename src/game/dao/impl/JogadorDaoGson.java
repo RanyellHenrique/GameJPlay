@@ -13,14 +13,13 @@ import com.google.gson.reflect.TypeToken;
 
 import game.dao.JogadorDAO;
 import game.dto.JogadorDTO;
-import game.entidades.Jogador;
 
 public class JogadorDaoGson implements JogadorDAO {
 	
-	public Jogador burcarPorIdCenario(int id)  {
+	public JogadorDTO burcarPorIdCenario(int id)  {
 		for(JogadorDTO j : buscarTodos()) {
 			if(j.getIdCenario() == id)
-				return new Jogador(j);
+				return j;
 		}
 		return null;
 	}
