@@ -4,11 +4,13 @@ public class JogadorDTO {
 	
 	private int x;
 	private int y;
+	private int idCenario;
 	
-	public JogadorDTO(int x, int y) {
+	public JogadorDTO(int x, int y, int idCenario) {
 		super();
 		this.x = x;
 		this.y = y;
+		this.idCenario = idCenario;
 	}
 
 	public int getX() {
@@ -25,6 +27,14 @@ public class JogadorDTO {
 
 	public void setY(int y) {
 		this.y = y;
+	}
+
+	public int getIdCenario() {
+		return idCenario;
+	}
+
+	public void setIdCenario(int idCenario) {
+		this.idCenario = idCenario;
 	}
 
 }

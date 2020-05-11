@@ -1,4 +1,4 @@
-package game.cenarios;
+package game.telas;
 
 import java.awt.event.KeyEvent;
 
@@ -8,13 +8,13 @@ import jplay.Keyboard;
 import jplay.Sound;
 import jplay.Window;
 
-public class Vitoria {
+public class TelaVitoria {
 	
 	private Window janela;
 	GameImage plano = new GameImage("src/resouces/sprites/vitoria.png");
 	private Keyboard teclado;
 	
-	public Vitoria(Window window) {
+	public TelaVitoria(Window window) {
 		janela = window;
 		teclado = janela.getKeyboard();
 		ControleAudio.play("src/resouces/audios/vitoria.wav");

@@ -1,4 +1,4 @@
-package game.cenarios;
+package game.telas;
 
 import java.awt.event.KeyEvent;
 
@@ -8,16 +8,17 @@ import jplay.Keyboard;
 import jplay.Sound;
 import jplay.Window;
 
-public class TelaDeControle {
+public class TelaGameOver {
 	
 	private Window janela;
-	GameImage plano = new GameImage("src/resouces/sprites/controle.png");
+	GameImage plano = new GameImage("src/resouces/sprites/gameOver.png");
 	private Keyboard teclado;
+
 	
-	public TelaDeControle(Window window) {
+	public TelaGameOver(Window window) {
 		janela = window;
 		teclado = janela.getKeyboard();
-		ControleAudio.play("src/resouces/audios/vitoria.wav");
+		ControleAudio.play("src/resouces/audios/gameOver.wav");
 		teclado.addKey(KeyEvent.VK_T, Keyboard.DETECT_INITIAL_PRESS_ONLY);
 		
 		run();
@@ -27,14 +28,14 @@ public class TelaDeControle {
 		while(true) {
 			plano.draw();
 			janela.update();
-			janela.delay(1000);
+		
 			if(teclado.keyDown(KeyEvent.VK_T)) {
-				new Sound("src/audios/coleta.wav").play();
-				janela.delay(1000);
 				ControleAudio.stop();
+				new Sound("src/resouces/audios/coleta.wav").play();
+				janela.delay(1000);
 				new TelaInicial(janela);
 			}	
 		}
 	}
-
+	
 }

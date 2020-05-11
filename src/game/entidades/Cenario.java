@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
-import game.cenarios.GameOver;
-import game.cenarios.Vitoria;
 import game.controles.ControleCenario;
+import game.telas.TelaGameOver;
+import game.telas.TelaVitoria;
 import jplay.Keyboard;
 import jplay.Scene;
 import jplay.Sound;
@@ -139,7 +139,7 @@ public class Cenario {
 					new Sound("src/resouces/audios/porta.wav").play();
 					janela.delay(2000);
 					if(this.id >= 2)
-						new Vitoria(janela);
+						new TelaVitoria(janela);
 					ControleCenario.novoCenario(janela, this.id + 1);
 				}
 			}
@@ -148,7 +148,7 @@ public class Cenario {
 	
 	public void gameOver() {
 		if(jogador.energia <= 0) {
-			new GameOver(janela);
+			new TelaGameOver(janela);
 		}
 	}
 }

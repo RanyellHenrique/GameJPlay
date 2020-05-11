@@ -1,4 +1,4 @@
-package game.cenarios;
+package game.telas;
 
 import java.awt.event.KeyEvent;
 
@@ -41,7 +41,7 @@ public class TelaInicial {
 			} else if (teclado.keyDown(KeyEvent.VK_T)) {
 				new Sound("src/resouces/audios/coleta.wav").play();
 				janela.delay(1000);
-				new TelaDeControle(janela);
+				new TelaControle(janela);
 			}
 		}
 	}
