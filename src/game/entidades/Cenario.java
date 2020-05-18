@@ -126,7 +126,7 @@ public class Cenario {
 		for(Lixeira lixeira : lixeiras) {
 			reciclaveis += lixeira.getReciclaveis().size();
 		}
-		if(reciclaveis == 10) {
+		if(reciclaveis >= inimigos.size()) {
 			Point min = new Point((int)jogador.x , (int)jogador.y);
 			Point max = new Point((int)jogador.x + jogador.width , (int)jogador.y + jogador.height);
 			Vector<?> tiles = cena.getTilesFromPosition(min, max);
