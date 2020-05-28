@@ -1,21 +1,21 @@
 [
 
-	{"x" : 500, "y" : 100, "url": "src/resouces/sprites/lixeira.png", "tipo" : "Metal", "idCenario" : 0},
-	{"x" : 550, "y" : 100, "url": "src/resouces/sprites/lixeira.png", "tipo" : "Vidro", "idCenario" : 0},
-	{"x" : 600, "y" : 100, "url": "src/resouces/sprites/lixeira.png", "tipo" : "Papel", "idCenario" : 0},
-	{"x" : 650, "y" : 100, "url": "src/resouces/sprites/lixeira.png", "tipo" : "Plástico", "idCenario" : 0},
-	{"x" : 700, "y" : 100, "url": "src/resouces/sprites/lixeira.png", "tipo" : "Orgânico", "idCenario" : 0},		
+	{"x" : 500, "y" : 100, "url": "src/resouces/sprites/lixeira4.png", "tipo" : "Metal", "idCenario" : 0},
+	{"x" : 550, "y" : 100, "url": "src/resouces/sprites/lixeira3.png", "tipo" : "Vidro", "idCenario" : 0},
+	{"x" : 600, "y" : 100, "url": "src/resouces/sprites/lixeira2.png", "tipo" : "Papel", "idCenario" : 0},
+	{"x" : 650, "y" : 100, "url": "src/resouces/sprites/lixeira1.png", "tipo" : "Plástico", "idCenario" : 0},
+	{"x" : 700, "y" : 100, "url": "src/resouces/sprites/lixeira5.png", "tipo" : "Orgânico", "idCenario" : 0},		
 	
-	{"x" : 1100, "y" : 300, "url": "src/resouces/sprites/lixeira.png", "tipo" : "Metal", "idCenario" : 1},
-	{"x" : 1050, "y" : 300, "url": "src/resouces/sprites/lixeira.png", "tipo" : "Vidro", "idCenario" : 1},
-	{"x" : 1000, "y" : 300, "url": "src/resouces/sprites/lixeira.png", "tipo" : "Papel", "idCenario" : 1},
-	{"x" : 900, "y" : 300, "url": "src/resouces/sprites/lixeira.png", "tipo" : "Plástico", "idCenario" : 1},
-	{"x" : 950, "y" : 300, "url": "src/resouces/sprites/lixeira.png", "tipo" : "Orgânico", "idCenario" : 1},		
+	{"x" : 1100, "y" : 300, "url": "src/resouces/sprites/lixeira4.png", "tipo" : "Metal", "idCenario" : 1},
+	{"x" : 1050, "y" : 300, "url": "src/resouces/sprites/lixeira3.png", "tipo" : "Vidro", "idCenario" : 1},
+	{"x" : 1000, "y" : 300, "url": "src/resouces/sprites/lixeira2.png", "tipo" : "Papel", "idCenario" : 1},
+	{"x" : 900, "y" : 300, "url": "src/resouces/sprites/lixeira1.png", "tipo" : "Plástico", "idCenario" : 1},
+	{"x" : 950, "y" : 300, "url": "src/resouces/sprites/lixeira5.png", "tipo" : "Orgânico", "idCenario" : 1},		
 
-	{"x" : 1620, "y" : 05, "url": "src/resouces/sprites/lixeira.png", "tipo" : "Metal", "idCenario" : 2},
-	{"x" : 1560, "y" : 05, "url": "src/resouces/sprites/lixeira.png", "tipo" : "Vidro", "idCenario" : 2},
-	{"x" : 1480, "y" : 05, "url": "src/resouces/sprites/lixeira.png", "tipo" : "Papel", "idCenario" : 2},
-	{"x" : 1400, "y" : 05, "url": "src/resouces/sprites/lixeira.png", "tipo" : "Plástico", "idCenario" : 2},
-	{"x" : 1320, "y" : 05, "url": "src/resouces/sprites/lixeira.png", "tipo" : "Orgânico", "idCenario" : 2}		
+	{"x" : 1620, "y" : 05, "url": "src/resouces/sprites/lixeira4.png", "tipo" : "Metal", "idCenario" : 2},
+	{"x" : 1560, "y" : 05, "url": "src/resouces/sprites/lixeira3.png", "tipo" : "Vidro", "idCenario" : 2},
+	{"x" : 1480, "y" : 05, "url": "src/resouces/sprites/lixeira2.png", "tipo" : "Papel", "idCenario" : 2},
+	{"x" : 1400, "y" : 05, "url": "src/resouces/sprites/lixeira1.png", "tipo" : "Plástico", "idCenario" : 2},
+	{"x" : 1320, "y" : 05, "url": "src/resouces/sprites/lixeira5.png", "tipo" : "Orgânico", "idCenario" : 2}		
 
 ]
